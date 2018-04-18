@@ -20,6 +20,7 @@
 		5DBE37B42085EF65003684E6 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37B32085EF65003684E6 /* StatisticsViewController.swift */; };
 		5DBE37B62085EF9D003684E6 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37B52085EF9D003684E6 /* TaskTableViewCell.swift */; };
 		5DBE37B82085F0BB003684E6 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37B72085F0BB003684E6 /* TaskDetailViewController.swift */; };
+		5DBE37BA2086DA19003684E6 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37B92086DA19003684E6 /* DB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		5DBE37B32085EF65003684E6 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		5DBE37B52085EF9D003684E6 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		5DBE37B72085F0BB003684E6 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		5DBE37B92086DA19003684E6 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				5D68E6CC2085E0370085A41A /* kanbanize.xcdatamodeld */,
+				5DBE37B92086DA19003684E6 /* DB.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DBE37B22085EF37003684E6 /* DoneViewController.swift in Sources */,
+				5DBE37BA2086DA19003684E6 /* DB.swift in Sources */,
 				5DBE37B02085EF2A003684E6 /* DoingViewController.swift in Sources */,
 				5DBE37B62085EF9D003684E6 /* TaskTableViewCell.swift in Sources */,
 				5DBE37AE2085EF18003684E6 /* ToDoViewController.swift in Sources */,

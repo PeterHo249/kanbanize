@@ -21,6 +21,11 @@
 		5DBE37B62085EF9D003684E6 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37B52085EF9D003684E6 /* TaskTableViewCell.swift */; };
 		5DBE37B82085F0BB003684E6 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37B72085F0BB003684E6 /* TaskDetailViewController.swift */; };
 		5DBE37BA2086DA19003684E6 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37B92086DA19003684E6 /* DB.swift */; };
+		5DBE37C1208DC9B7003684E6 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37BD208DC9B7003684E6 /* Task+CoreDataClass.swift */; };
+		5DBE37C2208DC9B7003684E6 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37BE208DC9B7003684E6 /* Task+CoreDataProperties.swift */; };
+		5DBE37C5208DCA6F003684E6 /* Board+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37C3208DCA6F003684E6 /* Board+CoreDataClass.swift */; };
+		5DBE37C6208DCA6F003684E6 /* Board+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37C4208DCA6F003684E6 /* Board+CoreDataProperties.swift */; };
+		5DBE37C8208DD218003684E6 /* BoardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37C7208DD218003684E6 /* BoardDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		5DBE37B52085EF9D003684E6 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		5DBE37B72085F0BB003684E6 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		5DBE37B92086DA19003684E6 /* DB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		5DBE37BD208DC9B7003684E6 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5DBE37BE208DC9B7003684E6 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5DBE37C3208DCA6F003684E6 /* Board+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Board+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5DBE37C4208DCA6F003684E6 /* Board+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Board+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5DBE37C7208DD218003684E6 /* BoardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +102,10 @@
 		5D68E6DB2085E1A50085A41A /* model */ = {
 			isa = PBXGroup;
 			children = (
+				5DBE37C3208DCA6F003684E6 /* Board+CoreDataClass.swift */,
+				5DBE37C4208DCA6F003684E6 /* Board+CoreDataProperties.swift */,
+				5DBE37BD208DC9B7003684E6 /* Task+CoreDataClass.swift */,
+				5DBE37BE208DC9B7003684E6 /* Task+CoreDataProperties.swift */,
 				5D68E6CC2085E0370085A41A /* kanbanize.xcdatamodeld */,
 				5DBE37B92086DA19003684E6 /* DB.swift */,
 			);
@@ -119,6 +133,7 @@
 				5DBE37B32085EF65003684E6 /* StatisticsViewController.swift */,
 				5DBE37B52085EF9D003684E6 /* TaskTableViewCell.swift */,
 				5DBE37B72085F0BB003684E6 /* TaskDetailViewController.swift */,
+				5DBE37C7208DD218003684E6 /* BoardDetailViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -194,9 +209,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DBE37C1208DC9B7003684E6 /* Task+CoreDataClass.swift in Sources */,
 				5DBE37B22085EF37003684E6 /* DoneViewController.swift in Sources */,
 				5DBE37BA2086DA19003684E6 /* DB.swift in Sources */,
 				5DBE37B02085EF2A003684E6 /* DoingViewController.swift in Sources */,
+				5DBE37C8208DD218003684E6 /* BoardDetailViewController.swift in Sources */,
+				5DBE37C5208DCA6F003684E6 /* Board+CoreDataClass.swift in Sources */,
 				5DBE37B62085EF9D003684E6 /* TaskTableViewCell.swift in Sources */,
 				5DBE37AE2085EF18003684E6 /* ToDoViewController.swift in Sources */,
 				5DBE37B82085F0BB003684E6 /* TaskDetailViewController.swift in Sources */,
@@ -204,7 +222,9 @@
 				5D68E6CE2085E0370085A41A /* kanbanize.xcdatamodeld in Sources */,
 				5D68E6C82085E0370085A41A /* BoardViewController.swift in Sources */,
 				5DBE37AC2085EB6F003684E6 /* BoardTableViewCell.swift in Sources */,
+				5DBE37C2208DC9B7003684E6 /* Task+CoreDataProperties.swift in Sources */,
 				5D68E6C62085E0370085A41A /* AppDelegate.swift in Sources */,
+				5DBE37C6208DCA6F003684E6 /* Board+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

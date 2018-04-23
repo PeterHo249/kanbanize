@@ -1,34 +1,17 @@
 //
-//  TaskDetailViewController.swift
+//  BoardDetailViewController.swift
 //  kanbanize
 //
-//  Created by Peter Ho on 4/17/18.
+//  Created by Peter Ho on 4/23/18.
 //  Copyright © 2018 Peter Ho. All rights reserved.
 //
 
 import UIKit
 
-class TaskDetailViewController: UIViewController {
+class BoardDetailViewController: UITabBarController {
 
-    // MARK - Delegate
+    var boardName:String!
     
-    
-    // MARK - Datasource
-    
-    
-    // MARK - Outlet
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var statusTextField: UITextField!
-    @IBOutlet weak var dueDateTextField: UITextField!
-    @IBOutlet weak var labelTextField: UITextField!
-    @IBOutlet weak var descriptionTextArea: UITextView!
-    @IBOutlet weak var statusIndicator: UILabel!
-    
-    
-    // MARK - Action
-    
-    
-    // MARK - Segue
     
     override func viewDidLoad() {
         super.viewDidLoad()

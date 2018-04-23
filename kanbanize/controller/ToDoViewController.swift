@@ -17,6 +17,11 @@ class ToDoViewController: UIViewController {
     
     
     // MARK - Outlet
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK - Variable
+    var boardName:String!
+    let id = "todo"
     
     
     // MARK - Action

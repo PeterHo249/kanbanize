@@ -18,13 +18,13 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     // MARK - Datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return boardList.count
+        return boards.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BoardTableViewCell", for: indexPath) as! BoardTableViewCell
         // TODO - Implement code for cell
-        let boardInfo = boardList[indexPath.row] as! Board
+        let boardInfo = boards[indexPath.row] as! Board
         cell.boardNameLabel.text = boardInfo.name
         
         return cell
@@ -32,7 +32,7 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     
     // MARK - Variable
-    var boardList = [NSManagedObject]()
+    var boards = [NSManagedObject]()
     
     
     // MARK - Outlet
@@ -44,7 +44,7 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
     // MARK - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let desVC = segue.destination as! BoardDetailViewController
-        desVC.boardName = (boardList[(boardTableView.indexPathForSelectedRow?.row)!] as! Board).name
+        desVC.boardName = (boards[(boardTableView.indexPathForSelectedRow?.row)!] as! Board).name!
     }
    
     
@@ -53,16 +53,17 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        boardList = Board.all()
+        boards = Board.All()
         
         // Init data for testing
-        if boardList.count == 0 {
-            let boardItem = Board.create() as! Board
+        if boards.count == 0 {
+            print("start init data")
+            let boardItem = Board.Create() as! Board
             boardItem.name = "todo"
             boardItem.nameOrder = 1
-            DB.save()
+            DB.Save()
             
-            var taskItem = Task.create() as! Task
+            var taskItem = Task.Create() as! Task
             taskItem.name = "Todo task"
             taskItem.dueDate = Date() as NSDate
             taskItem.status = "todo"
@@ -70,9 +71,9 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
             taskItem.detail = "some detail"
             taskItem.board = "todo"
             taskItem.order = 1
-            DB.save()
+            DB.Save()
             
-            taskItem = Task.create() as! Task
+            taskItem = Task.Create() as! Task
             taskItem.name = "Doing task"
             taskItem.dueDate = Date() as NSDate
             taskItem.status = "doing"
@@ -80,9 +81,9 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
             taskItem.detail = "some detail"
             taskItem.board = "todo"
             taskItem.order = 2
-            DB.save()
+            DB.Save()
             
-            taskItem = Task.create() as! Task
+            taskItem = Task.Create() as! Task
             taskItem.name = "Done task"
             taskItem.dueDate = Date() as NSDate
             taskItem.status = "done"
@@ -90,9 +91,9 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
             taskItem.detail = "some detail"
             taskItem.board = "todo"
             taskItem.order = 3
-            DB.save()
+            DB.Save()
             
-            taskItem = Task.create() as! Task
+            taskItem = Task.Create() as! Task
             taskItem.name = "overdue task"
             taskItem.dueDate = Date() as NSDate
             taskItem.status = "overdue"
@@ -100,10 +101,10 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
             taskItem.detail = "some detail"
             taskItem.board = "todo"
             taskItem.order = 4
-            DB.save()
+            DB.Save()
+            
+            boards = Board.All()
         }
-        
-        print("Finish init data")
     }
 
     override func didReceiveMemoryWarning() {

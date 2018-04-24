@@ -14,7 +14,7 @@ import CoreData
 public class Board: NSManagedObject {
     static let entityName = "Board"
     
-    static func all() -> [NSManagedObject] {
+    static func All() -> [NSManagedObject] {
         let fetchRequest: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: entityName)
         let sortDescriptor = NSSortDescriptor(key: "nameOrder", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
@@ -28,7 +28,7 @@ public class Board: NSManagedObject {
         }
     }
     
-    static func create() -> NSManagedObject {
+    static func Create() -> NSManagedObject {
         return NSEntityDescription.insertNewObject(forEntityName: entityName, into: DB.MOC)
     }
 }

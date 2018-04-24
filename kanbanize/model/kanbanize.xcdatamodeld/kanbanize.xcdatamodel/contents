@@ -12,9 +12,12 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="order" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <fetchedProperty name="fectchBoard" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Task"/>
+        </fetchedProperty>
     </entity>
     <elements>
-        <element name="Task" positionX="-0" positionY="-72" width="128" height="148"/>
         <element name="Board" positionX="144" positionY="-72" width="128" height="73"/>
+        <element name="Task" positionX="-0" positionY="-72" width="128" height="179"/>
     </elements>
 </model>

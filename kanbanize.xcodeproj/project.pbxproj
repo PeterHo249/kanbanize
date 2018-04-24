@@ -26,6 +26,7 @@
 		5DBE37C5208DCA6F003684E6 /* Board+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37C3208DCA6F003684E6 /* Board+CoreDataClass.swift */; };
 		5DBE37C6208DCA6F003684E6 /* Board+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37C4208DCA6F003684E6 /* Board+CoreDataProperties.swift */; };
 		5DBE37C8208DD218003684E6 /* BoardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37C7208DD218003684E6 /* BoardDetailViewController.swift */; };
+		5DBE37CC208F020A003684E6 /* TaskTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBE37CB208F020A003684E6 /* TaskTableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		5DBE37C3208DCA6F003684E6 /* Board+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Board+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5DBE37C4208DCA6F003684E6 /* Board+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Board+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5DBE37C7208DD218003684E6 /* BoardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDetailViewController.swift; sourceTree = "<group>"; };
+		5DBE37CB208F020A003684E6 /* TaskTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTableCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		5D68E6DC2085E1B10085A41A /* view */ = {
 			isa = PBXGroup;
 			children = (
+				5DBE37CB208F020A003684E6 /* TaskTableCell.xib */,
 				5D68E6C92085E0370085A41A /* Main.storyboard */,
 				5D68E6D12085E0440085A41A /* LaunchScreen.storyboard */,
 			);
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D68E6D32085E0440085A41A /* LaunchScreen.storyboard in Resources */,
+				5DBE37CC208F020A003684E6 /* TaskTableCell.xib in Resources */,
 				5D68E6D02085E0440085A41A /* Assets.xcassets in Resources */,
 				5D68E6CB2085E0370085A41A /* Main.storyboard in Resources */,
 			);

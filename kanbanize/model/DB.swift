@@ -16,7 +16,7 @@ class DB {
         return appDelegate.persistentContainer.viewContext
     }
     
-    static func save() {
+    static func Save() {
         if MOC.hasChanges {
             do {
                 try MOC.save()

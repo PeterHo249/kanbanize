@@ -10,13 +10,18 @@ import UIKit
 
 class BoardDetailViewController: UITabBarController {
 
-    var boardName:String!
+    var boardName = ""
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        print("boardName of tab bar controller \(boardName)")
+        let viewControllers = self.viewControllers
+        (viewControllers![0] as! ToDoViewController).boardName = boardName
+        (viewControllers![1] as! DoingViewController).boardName = boardName
+        (viewControllers![2] as! DoneViewController).boardName = boardName
     }
 
     override func didReceiveMemoryWarning() {

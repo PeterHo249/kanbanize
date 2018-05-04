@@ -29,6 +29,12 @@ class StatisticsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = "Statistics"
+        self.tabBarController?.navigationItem.title = "Statistics"
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

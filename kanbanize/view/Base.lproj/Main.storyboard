@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BoardTableViewCell" rowHeight="60" id="Xf0-ek-yth" customClass="BoardTableViewCell" customModule="kanbanize" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BoardTableViewCell" rowHeight="60" id="Xf0-ek-yth" customClass="BoardTableViewCell" customModule="kanbanize" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xf0-ek-yth" id="F0D-zm-St4">
@@ -65,9 +65,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Board" id="CsK-3V-t35">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LKs-6V-18T"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Board" id="CsK-3V-t35"/>
                     <connections>
                         <outlet property="boardTableView" destination="e3H-83-c9D" id="tsv-36-tch"/>
                     </connections>

@@ -144,7 +144,7 @@ class DoingViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         
-        let addButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(self.AddButtonPressed))
+        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.AddButtonPressed))
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(self.EditButtonPressed))
         
         self.tabBarController?.navigationItem.rightBarButtonItems = [addButton, editButton]
@@ -164,7 +164,7 @@ class DoingViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         tableView.reloadData()
         
-        let addButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(self.AddButtonPressed))
+        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.AddButtonPressed))
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(self.EditButtonPressed))
         self.tabBarController?.navigationItem.rightBarButtonItems = [addButton, editButton]
     }

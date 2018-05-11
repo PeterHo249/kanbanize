@@ -18,6 +18,10 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            let tasks = Task.FetchData(sort: true, board: (boards[indexPath.row] as! Board).name!)
+            for task in tasks {
+                DB.MOC.delete(task)
+            }
             DB.MOC.delete(boards[indexPath.row])
             boards.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -69,7 +73,7 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
             let nameTextField = alertController.textFields![0] as UITextField
             if (nameTextField.text != nil) {
                 if (!self.AddNewBoard(name: nameTextField.text!)) {
-                    let errorAlertController = UIAlertController(title: "Enter A New Namw", message: "\(nameTextField.text!) is already. Please enter a new name", preferredStyle: .alert)
+                    let errorAlertController = UIAlertController(title: "Enter A New Name", message: "\"\(nameTextField.text!)\" is already. Please enter a new name", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
                     errorAlertController.addAction(okAction)
                     self.present(errorAlertController, animated: true, completion: nil)
@@ -138,10 +142,10 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         boards = Board.All()
         
-        let addButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(self.AddButtonPressed))
+        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.AddButtonPressed))
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(self.EditButtonPressed))
         
-        self.tabBarController?.navigationItem.rightBarButtonItems = [addButton, editButton]
+        self.navigationItem.rightBarButtonItems = [addButton, editButton]
         
         // Init data for testing
         if boards.count == 0 {

@@ -146,7 +146,7 @@ class ToDoViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         
-        let addButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(self.AddButtonPressed))
+        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.AddButtonPressed))
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(self.EditButtonPressed))
         
         
@@ -167,7 +167,7 @@ class ToDoViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         tableView.reloadData()
         
-        let addButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(self.AddButtonPressed))
+        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.AddButtonPressed))
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(self.EditButtonPressed))
         self.tabBarController?.navigationItem.rightBarButtonItems = [addButton, editButton]
     }

@@ -138,7 +138,7 @@ class DoneViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         tasks = Task.FetchData(sort: true, board: boardName, status: id) + Task.FetchData(sort: true, board: boardName, status: "overdue")
         
-        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.AddButtonPressed))
+        let addButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(self.AddButtonPressed))
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(self.EditButtonPressed))
         
         
@@ -149,9 +149,11 @@ class DoneViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewWillAppear(animated)
         self.title = "Done"
         self.tabBarController?.navigationItem.title = "Done"
+        
         tasks = Task.FetchData(sort: true, board: boardName, status: id) + Task.FetchData(sort: true, board: boardName, status: "overdue")
         tableView.reloadData()
-        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.AddButtonPressed))
+        
+        let addButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(self.AddButtonPressed))
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(self.EditButtonPressed))
         self.tabBarController?.navigationItem.rightBarButtonItems = [addButton, editButton]
     }
@@ -161,6 +163,11 @@ class DoneViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        if (tableView.isEditing) {
+            tableView.setEditing(false, animated: true)
+        }
+    }
     
     /*
      // MARK: - Navigation

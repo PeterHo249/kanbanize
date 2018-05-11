@@ -11,10 +11,30 @@ import CoreData
 
 class BoardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
-    
     // MARK - Delegate
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            DB.MOC.delete(boards[indexPath.row])
+            boards.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            DB.Save()
+        }
+    }
+    
+    func MoveItem(fromIndex from: Int, toIndex to: Int) {
+        let item = boards[from]
+        boards.remove(at: from)
+        boards.insert(item, at: to)
+        UpdateOrder()
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        MoveItem(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
+    }
     
     // MARK - Datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,7 +59,70 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
      @IBOutlet weak var boardTableView: UITableView!
     
     // MARK - Action
+    @objc func AddButtonPressed(sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Add New Board", message: "Enter name of new board!", preferredStyle: .alert)
+        alertController.addTextField {
+            (textfield) in textfield.placeholder = "Enter Name"
+        }
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default, handler: {alert -> Void in
+            let nameTextField = alertController.textFields![0] as UITextField
+            if (nameTextField.text != nil) {
+                if (!self.AddNewBoard(name: nameTextField.text!)) {
+                    let errorAlertController = UIAlertController(title: "Enter A New Namw", message: "\(nameTextField.text!) is already. Please enter a new name", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    errorAlertController.addAction(okAction)
+                    self.present(errorAlertController, animated: true, completion: nil)
+                }
+            }
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
     
+    @objc func EditButtonPressed(sender: UIBarButtonItem) {
+        if (sender.title == "Done") {
+            self.boardTableView.setEditing(false, animated: true)
+            sender.title = "Edit"
+            sender.style = .plain
+        } else {
+            self.boardTableView.setEditing(true, animated: true)
+            sender.title = "Done"
+            sender.style = .done
+        }
+    }
+    
+    // MARK - Helper
+    func AddNewBoard(name: String) -> Bool {
+        for board in boards {
+            if ((board as! Board).name == name) {
+                return false
+            }
+        }
+        
+        let newBoard = Board.Create()
+        newBoard.setValue(name, forKey: "name")
+        newBoard.setValue(boards.count, forKey: "nameOrder")
+        boards.append(newBoard)
+        boardTableView.reloadData()
+        DB.Save()
+        
+        return true
+    }
+    
+    func UpdateOrder() {
+        var i = 0
+        for board in boards {
+            board.setValue(i, forKey: "nameOrder")
+            i = i + 1
+        }
+        
+        DB.Save()
+    }
     
     // MARK - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,6 +137,11 @@ class BoardViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view, typically from a nib.
         
         boards = Board.All()
+        
+        let addButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(self.AddButtonPressed))
+        let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(self.EditButtonPressed))
+        
+        self.tabBarController?.navigationItem.rightBarButtonItems = [addButton, editButton]
         
         // Init data for testing
         if boards.count == 0 {

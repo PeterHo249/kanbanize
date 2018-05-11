@@ -120,6 +120,10 @@ class TaskDetailViewController: UIViewController, UIPickerViewDelegate, UIPicker
             taskInfo.setValue(dateFormatter.date(from: dueDateTextField.text!)! as NSDate, forKey: "dueDate")
         }
         
+        if ((taskInfo.dueDate! as Date) < defaultDate && taskInfo.status != "done") {
+            taskInfo.setValue("overdue", forKey: "status")
+        }
+        
         DB.Save()
         self.navigationController?.popViewController(animated: true)
     }

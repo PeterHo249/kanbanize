@@ -137,10 +137,15 @@ class DoingViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.rowHeight = 70
         
         tasks = Task.FetchData(sort: true, board: boardName, status: id)
+        let currentDate = Date()
+        for task in tasks {
+            if (((task as! Task).dueDate! as Date) < currentDate) {
+                task.setValue("overdue", forKey: "status")
+            }
+        }
         
-        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.AddButtonPressed))
+        let addButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(self.AddButtonPressed))
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(self.EditButtonPressed))
-        
         
         self.tabBarController?.navigationItem.rightBarButtonItems = [addButton, editButton]
     }
@@ -149,11 +154,25 @@ class DoingViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewWillAppear(animated)
         self.title = "Doing"
         self.tabBarController?.navigationItem.title = "Doing"
+        
         tasks = Task.FetchData(sort: true, board: boardName, status: id)
+        let currentDate = Date()
+        for task in tasks {
+            if (((task as! Task).dueDate! as Date) < currentDate) {
+                task.setValue("overdue", forKey: "status")
+            }
+        }
         tableView.reloadData()
-        let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.AddButtonPressed))
+        
+        let addButton = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(self.AddButtonPressed))
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(self.EditButtonPressed))
         self.tabBarController?.navigationItem.rightBarButtonItems = [addButton, editButton]
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        if (tableView.isEditing) {
+            tableView.setEditing(false, animated: true)
+        }
     }
     
     override func didReceiveMemoryWarning() {

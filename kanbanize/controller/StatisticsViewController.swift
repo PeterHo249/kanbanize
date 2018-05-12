@@ -9,10 +9,11 @@
 import UIKit
 
 class StatisticsViewController: UIViewController {
-
+ var currentDemoController: UIViewController?
     // MARK - Delegate
     
-    
+    // MARK - Varible
+    var boardName = ""
     // MARK - Datasource
     
     
@@ -26,10 +27,22 @@ class StatisticsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let ChartView = ChartViewController()
+        ChartView.boardName=boardName
+       showExampleController(ChartView)
+        print("vao statict")
+        print(boardName)
     }
-    
+    fileprivate func showExampleController(_ controller: UIViewController) {
+        if let currentDemoController = currentDemoController {
+            currentDemoController.removeFromParentViewController()
+            currentDemoController.view.removeFromSuperview()
+        }
+        addChildViewController(controller)
+        controller.view.frame = view.bounds
+        view.addSubview(controller.view)
+        currentDemoController = controller
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = "Statistics"

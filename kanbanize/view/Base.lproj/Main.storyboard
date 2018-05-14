@@ -23,19 +23,15 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BoardTableViewCell" rowHeight="60" id="Xf0-ek-yth" customClass="BoardTableViewCell" customModule="kanbanize" customModuleProvider="target">
-
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BoardTableViewCell" rowHeight="60" id="Xf0-ek-yth" customClass="BoardTableViewCell" customModule="kanbanize" customModuleProvider="target">
-
                                         <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xf0-ek-yth" id="F0D-zm-St4">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="253" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Board 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5r-LH-ugC">
-                                                    <rect key="frame" x="15" y="11" width="264" height="38"/>
+                                                    <rect key="frame" x="15" y="11" width="230" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -88,7 +84,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XF4-7O-caA"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" id="S2u-zs-X5r"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="icons8-search-24" selectedImage="icons8-search-24" id="S2u-zs-X5r"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yjL-KP-gYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,7 +100,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="FhZ-Q8-g23"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Statistics" id="6xQ-se-ZNa"/>
+                    <tabBarItem key="tabBarItem" title="Statistics" image="icons8-statistics-24" selectedImage="icons8-statistics-24" id="6xQ-se-ZNa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85c-Ry-Kd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,7 +132,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YTZ-f0-KJI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Done" id="9yL-t7-LZN"/>
+                    <tabBarItem key="tabBarItem" title="Done" image="icons8-tasklist-24" selectedImage="icons8-tasklist-24" id="9yL-t7-LZN"/>
                     <connections>
                         <outlet property="tableView" destination="2kP-S3-Xyb" id="dOL-Jc-tcS"/>
                     </connections>
@@ -171,7 +167,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xag-bS-Zf2"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Doing" id="otN-D1-VlX"/>
+                    <tabBarItem key="tabBarItem" title="Doing" image="icons8-load-26" selectedImage="icons8-load-26" id="otN-D1-VlX"/>
                     <connections>
                         <outlet property="tableView" destination="dFY-Ua-5wP" id="5VU-I2-LUt"/>
                     </connections>
@@ -364,7 +360,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="47e-pr-Csg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="To-Do" id="4Oq-Cs-tiQ"/>
+                    <tabBarItem key="tabBarItem" title="To-Do" image="icons8-checklist-26" selectedImage="icons8-checklist-26" id="4Oq-Cs-tiQ"/>
                     <connections>
                         <outlet property="tableView" destination="VVz-k2-SCQ" id="cOa-vA-vj7"/>
                     </connections>
@@ -410,20 +406,12 @@
             </objects>
             <point key="canvasLocation" x="-948" y="-337"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Odd-fW-TMe">
-            <objects>
-                <viewController id="SGM-tD-soG" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ykR-ws-wya">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="k82-OW-bps"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V9I-If-DsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="171" y="344"/>
-        </scene>
     </scenes>
+    <resources>
+        <image name="icons8-checklist-26" width="26" height="26"/>
+        <image name="icons8-load-26" width="26" height="26"/>
+        <image name="icons8-search-24" width="24" height="24"/>
+        <image name="icons8-statistics-24" width="24" height="24"/>
+        <image name="icons8-tasklist-24" width="24" height="24"/>
+    </resources>
 </document>

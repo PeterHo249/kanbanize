@@ -37,15 +37,33 @@ class DoingViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let editVC = storyBoard.instantiateViewController(withIdentifier: "TaskDetailViewController") as! TaskDetailViewController
-        editVC.taskInfo = tasks[indexPath.row] as! Task
-        editVC.selectedIndex = indexPath.row
-        editVC.modeFlag = false
-        editVC.sourceViewController = self
-        editVC.sourceStatus = id
-        editVC.currentBoard = boardName
-        self.tabBarController?.navigationController?.pushViewController(editVC, animated: true)
+        ViewDetailAction(index: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let actionSheet = UIAlertController(title: "Task Action", message: "Please choose one action!", preferredStyle: .actionSheet)
+        
+        let moveDoingAction = UIAlertAction(title: "Move to To-Do", style: .default, handler: {alert -> Void in
+            self.MoveTaskAction(index: indexPath.row, status: "todo")
+        })
+        let moveDoneAction = UIAlertAction(title: "Move to Done", style: .default, handler: {alert -> Void in
+            self.MoveTaskAction(index: indexPath.row, status: "done")
+        })
+        let viewDetailAction = UIAlertAction(title: "View Detail", style: .default, handler: {alert -> Void in
+            self.ViewDetailAction(index: indexPath.row)
+        })
+        let shareAction = UIAlertAction(title: "Share Task", style: .default, handler: {alert -> Void in
+            self.ShareAction(task: self.tasks[indexPath.row] as! Task)
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        actionSheet.addAction(moveDoingAction)
+        actionSheet.addAction(moveDoneAction)
+        actionSheet.addAction(viewDetailAction)
+        actionSheet.addAction(shareAction)
+        actionSheet.addAction(cancelAction)
+        
+        present(actionSheet, animated: true, completion: nil)
     }
     
     
@@ -57,25 +75,8 @@ class DoingViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell", for: indexPath) as! TaskTableViewCell
         let taskInfo = tasks[indexPath.row] as! Task
-        cell.nameLabel.text = taskInfo.name
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = .current
-        dateFormatter.timeStyle = .short
-        dateFormatter.dateStyle = .short
-        cell.dueDateLabel.text = dateFormatter.string(from: taskInfo.dueDate! as Date)
-        switch taskInfo.status {
-        case "todo":
-            cell.statusIndicator.textColor = UIColor.blue
-            break
-        case "doing":
-            cell.statusIndicator.textColor = UIColor.yellow
-            break
-        case "done":
-            cell.statusIndicator.textColor = UIColor.green
-            break
-        default:
-            cell.statusIndicator.textColor = UIColor.red
-        }
+        
+        cell.LoadContent(name: taskInfo.name!, dueDate: taskInfo.dueDate! as Date, status: taskInfo.status!)
         
         return cell
     }
@@ -110,6 +111,38 @@ class DoingViewController: UIViewController, UITableViewDelegate, UITableViewDat
             sender.title = "Done"
             sender.style = .done
         }
+    }
+    
+    func MoveTaskAction(index: Int, status: String) {
+        (tasks[index] as! Task).ChangeStatus(status: status)
+        
+        tasks.remove(at: index)
+        tableView.reloadData()
+    }
+    
+    func ViewDetailAction(index: Int) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let editVC = storyBoard.instantiateViewController(withIdentifier: "TaskDetailViewController") as! TaskDetailViewController
+        editVC.taskInfo = tasks[index] as! Task
+        editVC.selectedIndex = index
+        editVC.modeFlag = false
+        editVC.sourceViewController = self
+        editVC.sourceStatus = id
+        editVC.currentBoard = boardName
+        self.tabBarController?.navigationController?.pushViewController(editVC, animated: true)
+    }
+    
+    func ShareAction(task: Task) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = .current
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        let text = "I have a task: \(task.name!), due at \(dateFormatter.string(from: task.dueDate! as Date))."
+        
+        let textToShare = [text]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        present(activityViewController, animated: true, completion: nil)
     }
     
     // MARK - Helper

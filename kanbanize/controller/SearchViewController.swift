@@ -1,30 +1,31 @@
 //
-//  BoardDetailViewController.swift
+//  SearchViewController.swift
 //  kanbanize
 //
-//  Created by Peter Ho on 4/23/18.
+//  Created by Peter Ho on 5/14/18.
 //  Copyright © 2018 Peter Ho. All rights reserved.
 //
 
 import UIKit
 
-class BoardDetailViewController: UITabBarController {
+class SearchViewController: UIViewController {
 
+    // MARK - Variable
     var boardName = ""
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("boardName of tab bar controller \(boardName)")
-        let viewControllers = self.viewControllers
-        (viewControllers![0] as! ToDoViewController).boardName = boardName
-        (viewControllers![1] as! DoingViewController).boardName = boardName
-        (viewControllers![2] as! DoneViewController).boardName = boardName
-        (viewControllers![3] as! StatisticsViewController).boardName = boardName
-        (viewControllers![4] as! SearchViewController).boardName = boardName
-
+        self.tabBarController?.navigationItem.rightBarButtonItems = []
+        self.title = "Search"
+        self.tabBarController?.navigationItem.title = "Search"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.navigationItem.rightBarButtonItems = []
+        self.title = "Search"
+        self.tabBarController?.navigationItem.title = "Search"
     }
 
     override func didReceiveMemoryWarning() {

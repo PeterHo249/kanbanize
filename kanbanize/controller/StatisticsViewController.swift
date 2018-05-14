@@ -28,10 +28,17 @@ class StatisticsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         let ChartView = ChartViewController()
         ChartView.boardName=boardName
         showController(ChartView)
+
+
+        // Do any additional setup after loading the view.
+        self.tabBarController?.navigationItem.rightBarButtonItems = []
+
     }
+
     fileprivate func showController(_ controller: UIViewController) {
         if let currentController = currentController {
             currentController.removeFromParentViewController()
@@ -46,6 +53,8 @@ class StatisticsViewController: UIViewController {
         super.viewWillAppear(animated)
         self.title = "Statistics"
         self.tabBarController?.navigationItem.title = "Statistics"
+        
+        self.tabBarController?.navigationItem.rightBarButtonItems = []
     }
 
     override func didReceiveMemoryWarning() {

@@ -90,38 +90,49 @@ class TaskDetailViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     @objc func SaveButtonPushed(sender: UIBarButtonItem) {
-        if modeFlag {
-            // Add new
-            taskInfo = Task.Create() as! Task
-            taskInfo.name = nameTextField.text!
-            taskInfo.board = currentBoard
-            taskInfo.status = statusTextField.text!
-            taskInfo.label = labelTextField.text!
-            taskInfo.detail = descriptionTextArea.text
-            let dateFormatter = DateFormatter()
-            dateFormatter.locale = .current
-            dateFormatter.timeStyle = .short
-            dateFormatter.dateStyle = .short
-            taskInfo.dueDate = dateFormatter.date(from: dueDateTextField.text!)! as NSDate
-            taskInfo.order = 0
+        if (nameTextField.text == "") {
+            let errorAlert = UIAlertController(title: "Opps!", message: "Please enter a name for your task!", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            errorAlert.addAction(okAction)
+            present(errorAlert, animated: true, completion: nil)
         } else {
-            // Edit the exist
-            taskInfo.setValue(nameTextField.text!, forKey: "name")
-            if sourceStatus != statusTextField.text! {
-                taskInfo.setValue(statusTextField.text!, forKey: "status")
-                taskInfo.setValue(0, forKey: "order")
+            if modeFlag {
+                // Add new
+                taskInfo = Task.Create() as! Task
+                taskInfo.name = nameTextField.text!
+                taskInfo.board = currentBoard
+                taskInfo.status = statusTextField.text!
+                taskInfo.label = labelTextField.text!
+                taskInfo.detail = descriptionTextArea.text
+                let dateFormatter = DateFormatter()
+                dateFormatter.locale = .current
+                dateFormatter.timeStyle = .short
+                dateFormatter.dateStyle = .short
+                taskInfo.dueDate = dateFormatter.date(from: dueDateTextField.text!)! as NSDate
+                taskInfo.order = 0
+            } else {
+                // Edit the exist
+                taskInfo.setValue(nameTextField.text!, forKey: "name")
+                if sourceStatus != statusTextField.text! {
+                    taskInfo.setValue(statusTextField.text!, forKey: "status")
+                    taskInfo.setValue(0, forKey: "order")
+                }
+                taskInfo.setValue(labelTextField.text!, forKey: "label")
+                taskInfo.setValue(descriptionTextArea.text!, forKey: "detail")
+                let dateFormatter = DateFormatter()
+                dateFormatter.locale = .current
+                dateFormatter.timeStyle = .short
+                dateFormatter.dateStyle = .short
+                taskInfo.setValue(dateFormatter.date(from: dueDateTextField.text!)! as NSDate, forKey: "dueDate")
             }
-            taskInfo.setValue(labelTextField.text!, forKey: "label")
-            taskInfo.setValue(descriptionTextArea.text!, forKey: "detail")
-            let dateFormatter = DateFormatter()
-            dateFormatter.locale = .current
-            dateFormatter.timeStyle = .short
-            dateFormatter.dateStyle = .short
-            taskInfo.setValue(dateFormatter.date(from: dueDateTextField.text!)! as NSDate, forKey: "dueDate")
+            
+            if ((taskInfo.dueDate! as Date) < defaultDate && taskInfo.status != "done") {
+                taskInfo.setValue("overdue", forKey: "status")
+            }
+            
+            DB.Save()
+            self.navigationController?.popViewController(animated: true)
         }
-        
-        DB.Save()
-        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func DueDatePickerValueChanged(sender: UIDatePicker) {

@@ -23,7 +23,11 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
+
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BoardTableViewCell" rowHeight="60" id="Xf0-ek-yth" customClass="BoardTableViewCell" customModule="kanbanize" customModuleProvider="target">
+
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BoardTableViewCell" rowHeight="60" id="Xf0-ek-yth" customClass="BoardTableViewCell" customModule="kanbanize" customModuleProvider="target">
+
                                         <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xf0-ek-yth" id="F0D-zm-St4">
@@ -97,25 +101,14 @@
                     <view key="view" contentMode="scaleToFill" id="qLK-g6-B0g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Co-g6-teK">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                            </scrollView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="9Co-g6-teK" firstAttribute="top" secondItem="FhZ-Q8-g23" secondAttribute="top" id="9Fr-U9-0og"/>
-                            <constraint firstItem="FhZ-Q8-g23" firstAttribute="bottom" secondItem="9Co-g6-teK" secondAttribute="bottom" id="UGf-31-VFS"/>
-                            <constraint firstItem="FhZ-Q8-g23" firstAttribute="trailing" secondItem="9Co-g6-teK" secondAttribute="trailing" id="eXO-e3-7WM"/>
-                            <constraint firstItem="9Co-g6-teK" firstAttribute="leading" secondItem="FhZ-Q8-g23" secondAttribute="leading" id="r5v-Fl-8hn"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FhZ-Q8-g23"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Statistics" id="6xQ-se-ZNa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85c-Ry-Kd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1481" y="1140"/>
+            <point key="canvasLocation" x="1479.375" y="1139.7887323943662"/>
         </scene>
         <!--Done-->
         <scene sceneID="ptw-aV-nwb">
@@ -416,6 +409,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KsH-Pp-reO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-948" y="-337"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Odd-fW-TMe">
+            <objects>
+                <viewController id="SGM-tD-soG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ykR-ws-wya">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="k82-OW-bps"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V9I-If-DsK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="171" y="344"/>
         </scene>
     </scenes>
 </document>

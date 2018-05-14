@@ -88,7 +88,6 @@ class ToDoViewController: UIViewController, UITableViewDelegate, UITableViewData
     let id = "todo"
     var tasks = [NSManagedObject]()
     
-    
     // MARK - Action
     @objc func AddButtonPressed() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

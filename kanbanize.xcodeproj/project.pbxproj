@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43DDC02F20A2D7BB0009C426 /* PieCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DDC02E20A2D7BB0009C426 /* PieCharts.framework */; };
+		43DDC03320A2D8EE0009C426 /* PieCharts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 43DDC03220A2D8ED0009C426 /* PieCharts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43DDC03720A2D9F60009C426 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DDC03620A2D9F50009C426 /* ChartViewController.swift */; };
 		5D68E6C62085E0370085A41A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D68E6C52085E0370085A41A /* AppDelegate.swift */; };
 		5D68E6C82085E0370085A41A /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D68E6C72085E0370085A41A /* BoardViewController.swift */; };
 		5D68E6CB2085E0370085A41A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D68E6C92085E0370085A41A /* Main.storyboard */; };
 		5D68E6CE2085E0370085A41A /* kanbanize.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D68E6CC2085E0370085A41A /* kanbanize.xcdatamodeld */; };
 		5D68E6D02085E0440085A41A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D68E6CF2085E0440085A41A /* Assets.xcassets */; };
 		5D68E6D32085E0440085A41A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D68E6D12085E0440085A41A /* LaunchScreen.storyboard */; };
+
+		5D99B51420A99D35005C5382 /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D99B51320A99D35005C5382 /* ChartView.xib */; };
+
 		5D99B51020A97287005C5382 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D99B50F20A97287005C5382 /* SearchViewController.swift */; };
+
 		5DBE37AC2085EB6F003684E6 /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37AB2085EB6F003684E6 /* BoardTableViewCell.swift */; };
 		5DBE37AE2085EF18003684E6 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37AD2085EF18003684E6 /* ToDoViewController.swift */; };
 		5DBE37B02085EF2A003684E6 /* DoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37AF2085EF2A003684E6 /* DoingViewController.swift */; };
@@ -30,7 +37,24 @@
 		5DBE37CC208F020A003684E6 /* TaskTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBE37CB208F020A003684E6 /* TaskTableCell.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		43DDC03120A2D8B20009C426 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				43DDC03320A2D8EE0009C426 /* PieCharts.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		43DDC02C20A2D74D0009C426 /* Build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Build; path = Carthage/Build; sourceTree = "<group>"; };
+		43DDC02E20A2D7BB0009C426 /* PieCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PieCharts.framework; path = Carthage/Build/iOS/PieCharts.framework; sourceTree = "<group>"; };
+		43DDC03220A2D8ED0009C426 /* PieCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PieCharts.framework; path = Carthage/Build/iOS/PieCharts.framework; sourceTree = "<group>"; };
+		43DDC03620A2D9F50009C426 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		5D68E6C22085E0370085A41A /* kanbanize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kanbanize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D68E6C52085E0370085A41A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D68E6C72085E0370085A41A /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
@@ -39,7 +63,11 @@
 		5D68E6CF2085E0440085A41A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D68E6D22085E0440085A41A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D68E6D42085E0440085A41A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+
+		5D99B51320A99D35005C5382 /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
+
 		5D99B50F20A97287005C5382 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+
 		5DBE37AB2085EB6F003684E6 /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
 		5DBE37AD2085EF18003684E6 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		5DBE37AF2085EF2A003684E6 /* DoingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingViewController.swift; sourceTree = "<group>"; };
@@ -61,17 +89,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43DDC02F20A2D7BB0009C426 /* PieCharts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43DDC02B20A2D74C0009C426 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43DDC02E20A2D7BB0009C426 /* PieCharts.framework */,
+				43DDC02C20A2D74D0009C426 /* Build */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5D68E6B92085E0370085A41A = {
 			isa = PBXGroup;
 			children = (
+				43DDC03220A2D8ED0009C426 /* PieCharts.framework */,
 				5D68E6C42085E0370085A41A /* kanbanize */,
 				5D68E6C32085E0370085A41A /* Products */,
+				43DDC02B20A2D74C0009C426 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +159,7 @@
 		5D68E6DC2085E1B10085A41A /* view */ = {
 			isa = PBXGroup;
 			children = (
+				5D99B51320A99D35005C5382 /* ChartView.xib */,
 				5DBE37CB208F020A003684E6 /* TaskTableCell.xib */,
 				5D68E6C92085E0370085A41A /* Main.storyboard */,
 				5D68E6D12085E0440085A41A /* LaunchScreen.storyboard */,
@@ -129,6 +170,7 @@
 		5D68E6DD2085E1B70085A41A /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				43DDC03620A2D9F50009C426 /* ChartViewController.swift */,
 				5D68E6C72085E0370085A41A /* BoardViewController.swift */,
 				5D68E6C52085E0370085A41A /* AppDelegate.swift */,
 				5DBE37AB2085EB6F003684E6 /* BoardTableViewCell.swift */,
@@ -154,6 +196,7 @@
 				5D68E6BE2085E0370085A41A /* Sources */,
 				5D68E6BF2085E0370085A41A /* Frameworks */,
 				5D68E6C02085E0370085A41A /* Resources */,
+				43DDC03120A2D8B20009C426 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -205,6 +248,7 @@
 				5D68E6D32085E0440085A41A /* LaunchScreen.storyboard in Resources */,
 				5DBE37CC208F020A003684E6 /* TaskTableCell.xib in Resources */,
 				5D68E6D02085E0440085A41A /* Assets.xcassets in Resources */,
+				5D99B51420A99D35005C5382 /* ChartView.xib in Resources */,
 				5D68E6CB2085E0370085A41A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,6 +268,7 @@
 				5DBE37C8208DD218003684E6 /* BoardDetailViewController.swift in Sources */,
 				5DBE37C5208DCA6F003684E6 /* Board+CoreDataClass.swift in Sources */,
 				5DBE37B62085EF9D003684E6 /* TaskTableViewCell.swift in Sources */,
+				43DDC03720A2D9F60009C426 /* ChartViewController.swift in Sources */,
 				5DBE37AE2085EF18003684E6 /* ToDoViewController.swift in Sources */,
 				5DBE37B82085F0BB003684E6 /* TaskDetailViewController.swift in Sources */,
 				5DBE37B42085EF65003684E6 /* StatisticsViewController.swift in Sources */,
@@ -378,6 +423,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C562YP6H2C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = kanbanize/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -396,6 +445,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C562YP6H2C;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = kanbanize/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

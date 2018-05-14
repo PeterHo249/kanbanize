@@ -9,10 +9,12 @@
 import UIKit
 
 class StatisticsViewController: UIViewController {
-
+ 
     // MARK - Delegate
     
-    
+    // MARK - Varible
+    var boardName = ""
+    var currentController: UIViewController?
     // MARK - Datasource
     
     
@@ -27,10 +29,26 @@ class StatisticsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let ChartView = ChartViewController()
+        ChartView.boardName=boardName
+        showController(ChartView)
+
+
         // Do any additional setup after loading the view.
         self.tabBarController?.navigationItem.rightBarButtonItems = []
+
     }
-    
+
+    fileprivate func showController(_ controller: UIViewController) {
+        if let currentController = currentController {
+            currentController.removeFromParentViewController()
+            currentController.view.removeFromSuperview()
+        }
+        addChildViewController(controller)
+        controller.view.frame = view.bounds
+        view.addSubview(controller.view)
+        currentController = controller
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = "Statistics"

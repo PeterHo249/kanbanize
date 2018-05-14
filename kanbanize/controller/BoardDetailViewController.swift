@@ -22,7 +22,9 @@ class BoardDetailViewController: UITabBarController {
         (viewControllers![0] as! ToDoViewController).boardName = boardName
         (viewControllers![1] as! DoingViewController).boardName = boardName
         (viewControllers![2] as! DoneViewController).boardName = boardName
+        (viewControllers![3] as! StatisticsViewController).boardName = boardName
         (viewControllers![4] as! SearchViewController).boardName = boardName
+
     }
 
     override func didReceiveMemoryWarning() {

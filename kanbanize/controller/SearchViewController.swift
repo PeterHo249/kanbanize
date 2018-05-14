@@ -1,42 +1,31 @@
 //
-//  StatisticsViewController.swift
+//  SearchViewController.swift
 //  kanbanize
 //
-//  Created by Peter Ho on 4/17/18.
+//  Created by Peter Ho on 5/14/18.
 //  Copyright © 2018 Peter Ho. All rights reserved.
 //
 
 import UIKit
 
-class StatisticsViewController: UIViewController {
+class SearchViewController: UIViewController {
 
-    // MARK - Delegate
-    
-    
-    // MARK - Datasource
-    
-    
-    // MARK - Outlet
-    
-    
-    // MARK - Action
-    
-    
-    // MARK - Segue
+    // MARK - Variable
+    var boardName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.tabBarController?.navigationItem.rightBarButtonItems = []
+        self.title = "Search"
+        self.tabBarController?.navigationItem.title = "Search"
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.title = "Statistics"
-        self.tabBarController?.navigationItem.title = "Statistics"
-        
         self.tabBarController?.navigationItem.rightBarButtonItems = []
+        self.title = "Search"
+        self.tabBarController?.navigationItem.title = "Search"
     }
 
     override func didReceiveMemoryWarning() {

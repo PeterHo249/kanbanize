@@ -71,4 +71,10 @@ public class Task: NSManagedObject {
     static func Create() -> NSManagedObject {
         return NSEntityDescription.insertNewObject(forEntityName: entityName, into: DB.MOC)
     }
+    
+    func ChangeStatus(status: String) {
+        setValue(status, forKey: "status")
+        setValue(0, forKey: "order")
+        DB.Save()
+    }
 }

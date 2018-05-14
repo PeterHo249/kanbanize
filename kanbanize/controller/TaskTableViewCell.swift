@@ -14,6 +14,29 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dueDateLabel: UILabel!
     
+    func LoadContent(name: String, dueDate: Date, status: String) {
+        nameLabel.text = name
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = .current
+        dateFormatter.timeStyle = .short
+        dateFormatter.dateStyle = .short
+        dueDateLabel.text = dateFormatter.string(from: dueDate)
+        switch status {
+        case "todo":
+            statusIndicator.textColor = UIColor.blue
+            break
+        case "doing":
+            statusIndicator.textColor = UIColor.yellow
+            break
+        case "done":
+            statusIndicator.textColor = UIColor.green
+            break
+        default:
+            statusIndicator.textColor = UIColor.red
+        }
+        
+        accessoryType = .detailDisclosureButton
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

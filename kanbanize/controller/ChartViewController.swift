@@ -1,7 +1,8 @@
 
 import UIKit
 import PieCharts
-import CoreData
+import CoreData // m mở xong m buil t xem
+
 
 class ChartViewController: UIViewController, PieChartDelegate {
     // MARK - Variable
@@ -13,9 +14,7 @@ class ChartViewController: UIViewController, PieChartDelegate {
         
        chartView.layers = [createCustomViewsLayer(), createTextLayer()]
        chartView.delegate = self
-       chartView.models = createModels() // order is important - models have to be set at the end
-        print("vao CustomView")
-        print(boardName)
+       chartView.models = createModels()
     }
     
     // MARK: - PieChartDelegate
@@ -32,7 +31,6 @@ class ChartViewController: UIViewController, PieChartDelegate {
         let valDoing = Task.FetchData(sort: true, board: boardName, status: "doing").count
         let valDone = Task.FetchData(sort: true, board: boardName, status: "done").count
         let valOverDue = Task.FetchData(sort: true, board: boardName, status: "overdue").count
-        let valTotal = valTodo+valDone+valDoing+valOverDue
         return [
             PieSliceModel(value: Double(valTodo), color: UIColor.blue.withAlphaComponent(alpha)),
             PieSliceModel(value: Double(valDoing), color: UIColor.yellow.withAlphaComponent(alpha)),
@@ -84,40 +82,28 @@ class ChartViewController: UIViewController, PieChartDelegate {
             container.addSubview(view)
             
            
-                let specialTextLabel = UILabel()
-                specialTextLabel.textAlignment = .center
-                if slice.data.id == 0 {
-                    specialTextLabel.text = "Todo"
-                     specialTextLabel.textColor = UIColor.blue
-                    specialTextLabel.font = UIFont.boldSystemFont(ofSize: 18)
-                } else if slice.data.id == 2 {
-                    specialTextLabel.textColor = UIColor.blue
-                    specialTextLabel.text = "Done"
-                } else if slice.data.id == 3 {
-                    specialTextLabel.textColor = UIColor.blue
-                    specialTextLabel.text = "Overdue"
-                }else if slice.data.id == 1 {
-                    specialTextLabel.textColor = UIColor.blue
-                    specialTextLabel.text = "Doing"
+            let specialTextLabel = UILabel()
+            specialTextLabel.textAlignment = .center
+            if slice.data.id == 0 {
+                specialTextLabel.text = "Todo"
+                 specialTextLabel.textColor = UIColor.blue
+                specialTextLabel.font = UIFont.boldSystemFont(ofSize: 18)
+            } else if slice.data.id == 2 {
+                specialTextLabel.textColor = UIColor.blue
+                specialTextLabel.text = "Done"
+            } else if slice.data.id == 3 {
+                specialTextLabel.textColor = UIColor.blue
+                specialTextLabel.text = "Overdue"
+            } else if slice.data.id == 1 {
+                specialTextLabel.textColor = UIColor.blue
+                specialTextLabel.text = "Doing"
             }
-                specialTextLabel.sizeToFit()
-                specialTextLabel.frame = CGRect(x: 0, y: 40, width: 100, height: 20)
-                container.addSubview(specialTextLabel)
-                container.frame.size = CGSize(width: 100, height: 60)
             
+            specialTextLabel.sizeToFit()
+            specialTextLabel.frame = CGRect(x: 0, y: 40, width: 100, height: 20)
+            container.addSubview(specialTextLabel)
+            container.frame.size = CGSize(width: 100, height: 60)
             
-            
-            let imageName: String? = {
-                switch slice.data.id {
-                case 0: return "icons8-women-48"
-                case 1: return "icons8-exercise-48"
-                case 2: return "icons8-counselor-48"
-                case 3: return "icons8-crying-baby-48"
-                default: return nil
-                }
-            }()
-            
-            view.image = imageName.flatMap{UIImage(named: $0)}
             
             return container
         }

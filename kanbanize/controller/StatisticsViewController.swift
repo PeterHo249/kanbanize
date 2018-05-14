@@ -9,11 +9,12 @@
 import UIKit
 
 class StatisticsViewController: UIViewController {
- var currentDemoController: UIViewController?
+ 
     // MARK - Delegate
     
     // MARK - Varible
     var boardName = ""
+    var currentController: UIViewController?
     // MARK - Datasource
     
     
@@ -29,19 +30,17 @@ class StatisticsViewController: UIViewController {
         super.viewDidLoad()
         let ChartView = ChartViewController()
         ChartView.boardName=boardName
-       showExampleController(ChartView)
-        print("vao statict")
-        print(boardName)
+        showController(ChartView)
     }
-    fileprivate func showExampleController(_ controller: UIViewController) {
-        if let currentDemoController = currentDemoController {
-            currentDemoController.removeFromParentViewController()
-            currentDemoController.view.removeFromSuperview()
+    fileprivate func showController(_ controller: UIViewController) {
+        if let currentController = currentController {
+            currentController.removeFromParentViewController()
+            currentController.view.removeFromSuperview()
         }
         addChildViewController(controller)
         controller.view.frame = view.bounds
         view.addSubview(controller.view)
-        currentDemoController = controller
+        currentController = controller
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

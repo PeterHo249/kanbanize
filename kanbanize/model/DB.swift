@@ -14,6 +14,7 @@ class DB {
     static var MOC: NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
+        
     }
     
     static func Save() {

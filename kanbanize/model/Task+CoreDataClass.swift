@@ -68,6 +68,34 @@ public class Task: NSManagedObject {
         }
     }
     
+    static func FetchUpcomingTask() -> NSManagedObject? {
+        let now = Date()
+        
+        let fetchRequest: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: entityName)
+        
+        fetchRequest.predicate = NSPredicate(format: "status == %@ OR status == %@", argumentArray: ["todo", "doing"])
+        
+        do {
+            let list = try DB.MOC.fetch(fetchRequest as! NSFetchRequest<NSFetchRequestResult>) as! [NSManagedObject]
+            if (list.count == 0) {
+                return nil
+            } else {
+                var result = list[0]
+                for record in list {
+                    let recordDate = (record as! Task).dueDate! as Date
+                    if (recordDate > now && recordDate < (result as! Task).dueDate! as Date) {
+                        result = record
+                    }
+                }
+                return result
+            }
+        }
+        catch let error as NSError {
+            print("Cannot get all from entity \(entityName), error: \(error), \(error.userInfo)")
+            return nil
+        }
+    }
+    
     static func Create() -> NSManagedObject {
         return NSEntityDescription.insertNewObject(forEntityName: entityName, into: DB.MOC)
     }

@@ -16,11 +16,8 @@
 		5D68E6CE2085E0370085A41A /* kanbanize.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D68E6CC2085E0370085A41A /* kanbanize.xcdatamodeld */; };
 		5D68E6D02085E0440085A41A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D68E6CF2085E0440085A41A /* Assets.xcassets */; };
 		5D68E6D32085E0440085A41A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D68E6D12085E0440085A41A /* LaunchScreen.storyboard */; };
-
-		5D99B51420A99D35005C5382 /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D99B51320A99D35005C5382 /* ChartView.xib */; };
-
 		5D99B51020A97287005C5382 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D99B50F20A97287005C5382 /* SearchViewController.swift */; };
-
+		5D99B51420A99D35005C5382 /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D99B51320A99D35005C5382 /* ChartView.xib */; };
 		5DBE37AC2085EB6F003684E6 /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37AB2085EB6F003684E6 /* BoardTableViewCell.swift */; };
 		5DBE37AE2085EF18003684E6 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37AD2085EF18003684E6 /* ToDoViewController.swift */; };
 		5DBE37B02085EF2A003684E6 /* DoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37AF2085EF2A003684E6 /* DoingViewController.swift */; };
@@ -48,6 +45,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5D99B52920AAC848005C5382 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -63,11 +70,10 @@
 		5D68E6CF2085E0440085A41A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D68E6D22085E0440085A41A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D68E6D42085E0440085A41A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-
-		5D99B51320A99D35005C5382 /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
-
 		5D99B50F20A97287005C5382 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-
+		5D99B51320A99D35005C5382 /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
+		5D99B51A20AAC847005C5382 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		5D99B53120AAE088005C5382 /* kanbanize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kanbanize.entitlements; sourceTree = "<group>"; };
 		5DBE37AB2085EB6F003684E6 /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
 		5DBE37AD2085EF18003684E6 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		5DBE37AF2085EF2A003684E6 /* DoingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +107,7 @@
 			children = (
 				43DDC02E20A2D7BB0009C426 /* PieCharts.framework */,
 				43DDC02C20A2D74D0009C426 /* Build */,
+				5D99B51A20AAC847005C5382 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,6 +133,7 @@
 		5D68E6C42085E0370085A41A /* kanbanize */ = {
 			isa = PBXGroup;
 			children = (
+				5D99B53120AAE088005C5382 /* kanbanize.entitlements */,
 				5D68E6DD2085E1B70085A41A /* controller */,
 				5D68E6DC2085E1B10085A41A /* view */,
 				5D68E6DB2085E1A50085A41A /* model */,
@@ -197,6 +205,7 @@
 				5D68E6BF2085E0370085A41A /* Frameworks */,
 				5D68E6C02085E0370085A41A /* Resources */,
 				43DDC03120A2D8B20009C426 /* CopyFiles */,
+				5D99B52920AAC848005C5382 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -219,6 +228,11 @@
 				TargetAttributes = {
 					5D68E6C12085E0370085A41A = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -421,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = kanbanize/kanbanize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C562YP6H2C;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -443,6 +458,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = kanbanize/kanbanize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C562YP6H2C;
 				FRAMEWORK_SEARCH_PATHS = (

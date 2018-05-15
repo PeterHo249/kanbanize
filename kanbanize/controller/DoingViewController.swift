@@ -66,6 +66,28 @@ class DoingViewController: UIViewController, UITableViewDelegate, UITableViewDat
         present(actionSheet, animated: true, completion: nil)
     }
     
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let moveDoneAction = UIContextualAction(style: .normal, title: "Move to Done") {
+            (action, view, handler) in
+            self.MoveTaskAction(index: indexPath.row, status: "done")
+        }
+        
+        moveDoneAction.backgroundColor = .green
+        let configuration = UISwipeActionsConfiguration(actions: [moveDoneAction])
+        return configuration
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let moveTodoAction = UIContextualAction(style: .normal, title: "Move to To-Do") {
+            (action, view, handler) in
+            self.MoveTaskAction(index: indexPath.row, status: "todo")
+        }
+        
+        moveTodoAction.backgroundColor = .blue
+        let configuration = UISwipeActionsConfiguration(actions: [moveTodoAction])
+        return configuration
+    }
+    
     
     // MARK - Datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

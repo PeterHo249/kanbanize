@@ -54,6 +54,7 @@
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="6Tf-NP-zoc" secondAttribute="trailing" constant="10" id="heG-sL-d0J"/>
                             <constraint firstItem="fxk-wq-oLX" firstAttribute="top" secondItem="6Tf-NP-zoc" secondAttribute="bottom" constant="10" id="i3j-qq-zFI"/>
                             <constraint firstItem="6Tf-NP-zoc" firstAttribute="leading" secondItem="kzJ-5R-4ih" secondAttribute="leading" id="jid-c8-ScJ"/>
+                            <constraint firstItem="6Tf-NP-zoc" firstAttribute="leading" secondItem="bLz-yy-kH2" secondAttribute="trailing" constant="35" id="u0v-0w-JJU"/>
                             <constraint firstItem="6Tf-NP-zoc" firstAttribute="top" secondItem="kzJ-5R-4ih" secondAttribute="bottom" constant="10" id="y5J-0w-Exr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>

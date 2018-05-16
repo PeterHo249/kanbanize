@@ -86,6 +86,7 @@
 		43DDC02E20A2D7BB0009C426 /* PieCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PieCharts.framework; path = Carthage/Build/iOS/PieCharts.framework; sourceTree = "<group>"; };
 		43DDC03220A2D8ED0009C426 /* PieCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PieCharts.framework; path = Carthage/Build/iOS/PieCharts.framework; sourceTree = "<group>"; };
 		43DDC03620A2D9F50009C426 /* ChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		5D51E4FC20AC152800E98C86 /* upcomingWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = upcomingWidget.entitlements; sourceTree = "<group>"; };
 		5D68E6C22085E0370085A41A /* kanbanize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kanbanize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D68E6C52085E0370085A41A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D68E6C72085E0370085A41A /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +240,7 @@
 		5D99B53F20ABCB7F005C5382 /* upcomingWidget */ = {
 			isa = PBXGroup;
 			children = (
+				5D51E4FC20AC152800E98C86 /* upcomingWidget.entitlements */,
 				5D99B54020ABCB7F005C5382 /* TodayViewController.swift */,
 				5D99B54220ABCB7F005C5382 /* MainInterface.storyboard */,
 				5D99B54520ABCB7F005C5382 /* Info.plist */,
@@ -306,6 +308,11 @@
 					};
 					5D99B53C20ABCB7E005C5382 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -597,6 +604,7 @@
 		5D99B54920ABCB7F005C5382 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = upcomingWidget/upcomingWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C562YP6H2C;
 				INFOPLIST_FILE = upcomingWidget/Info.plist;
@@ -616,6 +624,7 @@
 		5D99B54A20ABCB7F005C5382 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = upcomingWidget/upcomingWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C562YP6H2C;
 				INFOPLIST_FILE = upcomingWidget/Info.plist;

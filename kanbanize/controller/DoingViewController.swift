@@ -198,6 +198,7 @@ class DoingViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 task.setValue("overdue", forKey: "status")
             }
         }
+        DB.Save()
         
         let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.AddButtonPressed))
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(self.EditButtonPressed))
@@ -217,6 +218,7 @@ class DoingViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 task.setValue("overdue", forKey: "status")
             }
         }
+        DB.Save()
         tableView.reloadData()
         
         let addButton = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(self.AddButtonPressed))

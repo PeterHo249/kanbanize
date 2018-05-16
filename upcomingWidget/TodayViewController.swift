@@ -32,12 +32,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func DisplayInfo(task: Task) {
         nameLabel.text = task.name
-        boardLabel.text = task.board
+        boardLabel.text = "Board: \(task.board ?? "")"
         let dateFormatter =  DateFormatter()
         dateFormatter.locale = .current
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
-        dueDateLabel.text = dateFormatter.string(from: task.dueDate! as Date)
+        dueDateLabel.text = "Due at: \(dateFormatter.string(from: task.dueDate! as Date))"
         switch task.status {
         case "todo":
             statusIndicator.textColor = .blue

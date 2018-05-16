@@ -70,7 +70,6 @@ public class Task: NSManagedObject {
     
     static func FetchUpcomingTask() -> NSManagedObject? {
         let now = Date()
-        
         let fetchRequest: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: entityName)
         
         fetchRequest.predicate = NSPredicate(format: "status == %@ OR status == %@", argumentArray: ["todo", "doing"])

@@ -34,7 +34,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         self.title = "Search"
         self.tabBarController?.navigationItem.title = "Search"
         
-        tasks = Task.All()
+        tasks = Task.FetchData(sort: false, board: boardName)
         
         let resultsController = SearchResultController()
         resultsController.tasks = tasks
@@ -53,7 +53,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         self.title = "Search"
         self.tabBarController?.navigationItem.title = "Search"
         
-        tasks = Task.All()
+        tasks = Task.FetchData(sort: false, board: boardName)
         
         let resultsController = SearchResultController()
         resultsController.tasks = tasks

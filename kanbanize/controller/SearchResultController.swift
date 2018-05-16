@@ -48,6 +48,24 @@ class SearchResultController: UITableViewController, UISearchResultsUpdating {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let editVC = storyBoard.instantiateViewController(withIdentifier: "TaskDetailViewController") as! TaskDetailViewController
+        editVC.taskInfo = filteredTasks[indexPath.row] as! Task
+        editVC.selectedIndex = indexPath.row
+        editVC.modeFlag = false
+        editVC.sourceViewController = self
+        editVC.sourceStatus = (filteredTasks[indexPath.row] as! Task).status
+        editVC.currentBoard = (filteredTasks[indexPath.row] as! Task).board
+        
+        self.parent?.tabBarController?.navigationController?.pushViewController(editVC, animated: true)
+        
+    }
+    
     // MARK - UISearchResultUpdating Conformance
     func updateSearchResults(for searchController: UISearchController) {
         if let searchString = searchController.searchBar.text {
@@ -62,7 +80,7 @@ class SearchResultController: UITableViewController, UISearchResultsUpdating {
                 }
             } else {
                 for task in tasks {
-                    if (((task as! Task).name?.range(of: searchString, options: .caseInsensitive, range: nil, locale: nil)) != nil) {
+                    if (((task as! Task).label?.range(of: searchString, options: .caseInsensitive, range: nil, locale: nil)) != nil) {
                         filteredTasks.append(task)
                     }
                 }

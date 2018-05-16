@@ -81,10 +81,29 @@
                     <view key="view" contentMode="scaleToFill" id="qD5-hm-Iee">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wcq-2G-tlh">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SZL-Bv-P2H" id="g3M-BA-jmf"/>
+                                    <outlet property="delegate" destination="SZL-Bv-P2H" id="7cR-kw-2fL"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XF4-7O-caA" firstAttribute="trailing" secondItem="wcq-2G-tlh" secondAttribute="trailing" id="9ww-tf-pLz"/>
+                            <constraint firstItem="XF4-7O-caA" firstAttribute="bottom" secondItem="wcq-2G-tlh" secondAttribute="bottom" id="gbe-7y-4zS"/>
+                            <constraint firstItem="wcq-2G-tlh" firstAttribute="leading" secondItem="XF4-7O-caA" secondAttribute="leading" id="m71-2Y-OnR"/>
+                            <constraint firstItem="wcq-2G-tlh" firstAttribute="top" secondItem="XF4-7O-caA" secondAttribute="top" id="yHo-RQ-xX5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XF4-7O-caA"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="icons8-search-24" selectedImage="icons8-search-24" id="S2u-zs-X5r"/>
+                    <connections>
+                        <outlet property="tableView" destination="wcq-2G-tlh" id="Fpg-PV-hBb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yjL-KP-gYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

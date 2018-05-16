@@ -18,6 +18,18 @@
 		5D68E6D32085E0440085A41A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D68E6D12085E0440085A41A /* LaunchScreen.storyboard */; };
 		5D99B51020A97287005C5382 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D99B50F20A97287005C5382 /* SearchViewController.swift */; };
 		5D99B51420A99D35005C5382 /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D99B51320A99D35005C5382 /* ChartView.xib */; };
+		5D99B53E20ABCB7E005C5382 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D99B51A20AAC847005C5382 /* NotificationCenter.framework */; };
+		5D99B54120ABCB7F005C5382 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D99B54020ABCB7F005C5382 /* TodayViewController.swift */; };
+		5D99B54420ABCB7F005C5382 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D99B54220ABCB7F005C5382 /* MainInterface.storyboard */; };
+		5D99B54820ABCB7F005C5382 /* upcomingWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5D99B53D20ABCB7E005C5382 /* upcomingWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5D99B54D20ABCBCB005C5382 /* CoreDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D99B54C20ABCBCB005C5382 /* CoreDataAccess.swift */; };
+		5D99B54E20ABD0FE005C5382 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37B92086DA19003684E6 /* DB.swift */; };
+		5D99B54F20ABD103005C5382 /* CoreDataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D99B54C20ABCBCB005C5382 /* CoreDataAccess.swift */; };
+		5D99B55020ABD106005C5382 /* kanbanize.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D68E6CC2085E0370085A41A /* kanbanize.xcdatamodeld */; };
+		5D99B55120ABD10A005C5382 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37BE208DC9B7003684E6 /* Task+CoreDataProperties.swift */; };
+		5D99B55220ABD10C005C5382 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37BD208DC9B7003684E6 /* Task+CoreDataClass.swift */; };
+		5D99B55320ABD10F005C5382 /* Board+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37C4208DCA6F003684E6 /* Board+CoreDataProperties.swift */; };
+		5D99B55420ABD112005C5382 /* Board+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37C3208DCA6F003684E6 /* Board+CoreDataClass.swift */; };
 		5DBE37AC2085EB6F003684E6 /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37AB2085EB6F003684E6 /* BoardTableViewCell.swift */; };
 		5DBE37AE2085EF18003684E6 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37AD2085EF18003684E6 /* ToDoViewController.swift */; };
 		5DBE37B02085EF2A003684E6 /* DoingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37AF2085EF2A003684E6 /* DoingViewController.swift */; };
@@ -33,6 +45,16 @@
 		5DBE37C8208DD218003684E6 /* BoardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBE37C7208DD218003684E6 /* BoardDetailViewController.swift */; };
 		5DBE37CC208F020A003684E6 /* TaskTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBE37CB208F020A003684E6 /* TaskTableCell.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D99B54620ABCB7F005C5382 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D68E6BA2085E0370085A41A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D99B53C20ABCB7E005C5382;
+			remoteInfo = upcomingWidget;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		43DDC03120A2D8B20009C426 /* CopyFiles */ = {
@@ -51,6 +73,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				5D99B54820ABCB7F005C5382 /* upcomingWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +97,11 @@
 		5D99B51320A99D35005C5382 /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
 		5D99B51A20AAC847005C5382 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		5D99B53120AAE088005C5382 /* kanbanize.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kanbanize.entitlements; sourceTree = "<group>"; };
+		5D99B53D20ABCB7E005C5382 /* upcomingWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = upcomingWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D99B54020ABCB7F005C5382 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		5D99B54320ABCB7F005C5382 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		5D99B54520ABCB7F005C5382 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D99B54C20ABCBCB005C5382 /* CoreDataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAccess.swift; sourceTree = "<group>"; };
 		5DBE37AB2085EB6F003684E6 /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
 		5DBE37AD2085EF18003684E6 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		5DBE37AF2085EF2A003684E6 /* DoingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoingViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +127,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5D99B53A20ABCB7E005C5382 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D99B53E20ABCB7E005C5382 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -117,6 +153,7 @@
 			children = (
 				43DDC03220A2D8ED0009C426 /* PieCharts.framework */,
 				5D68E6C42085E0370085A41A /* kanbanize */,
+				5D99B53F20ABCB7F005C5382 /* upcomingWidget */,
 				5D68E6C32085E0370085A41A /* Products */,
 				43DDC02B20A2D74C0009C426 /* Frameworks */,
 			);
@@ -126,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				5D68E6C22085E0370085A41A /* kanbanize.app */,
+				5D99B53D20ABCB7E005C5382 /* upcomingWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,6 +198,7 @@
 				5DBE37BE208DC9B7003684E6 /* Task+CoreDataProperties.swift */,
 				5D68E6CC2085E0370085A41A /* kanbanize.xcdatamodeld */,
 				5DBE37B92086DA19003684E6 /* DB.swift */,
+				5D99B54C20ABCBCB005C5382 /* CoreDataAccess.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -194,6 +233,16 @@
 			path = controller;
 			sourceTree = "<group>";
 		};
+		5D99B53F20ABCB7F005C5382 /* upcomingWidget */ = {
+			isa = PBXGroup;
+			children = (
+				5D99B54020ABCB7F005C5382 /* TodayViewController.swift */,
+				5D99B54220ABCB7F005C5382 /* MainInterface.storyboard */,
+				5D99B54520ABCB7F005C5382 /* Info.plist */,
+			);
+			path = upcomingWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,11 +259,29 @@
 			buildRules = (
 			);
 			dependencies = (
+				5D99B54720ABCB7F005C5382 /* PBXTargetDependency */,
 			);
 			name = kanbanize;
 			productName = kanbanize;
 			productReference = 5D68E6C22085E0370085A41A /* kanbanize.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5D99B53C20ABCB7E005C5382 /* upcomingWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D99B54B20ABCB7F005C5382 /* Build configuration list for PBXNativeTarget "upcomingWidget" */;
+			buildPhases = (
+				5D99B53920ABCB7E005C5382 /* Sources */,
+				5D99B53A20ABCB7E005C5382 /* Frameworks */,
+				5D99B53B20ABCB7E005C5382 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = upcomingWidget;
+			productName = upcomingWidget;
+			productReference = 5D99B53D20ABCB7E005C5382 /* upcomingWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -234,6 +301,9 @@
 							};
 						};
 					};
+					5D99B53C20ABCB7E005C5382 = {
+						CreatedOnToolsVersion = 9.3;
+					};
 				};
 			};
 			buildConfigurationList = 5D68E6BD2085E0370085A41A /* Build configuration list for PBXProject "kanbanize" */;
@@ -250,6 +320,7 @@
 			projectRoot = "";
 			targets = (
 				5D68E6C12085E0370085A41A /* kanbanize */,
+				5D99B53C20ABCB7E005C5382 /* upcomingWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -264,6 +335,14 @@
 				5D68E6D02085E0440085A41A /* Assets.xcassets in Resources */,
 				5D99B51420A99D35005C5382 /* ChartView.xib in Resources */,
 				5D68E6CB2085E0370085A41A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D99B53B20ABCB7E005C5382 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D99B54420ABCB7F005C5382 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,13 +368,37 @@
 				5D68E6CE2085E0370085A41A /* kanbanize.xcdatamodeld in Sources */,
 				5D68E6C82085E0370085A41A /* BoardViewController.swift in Sources */,
 				5DBE37AC2085EB6F003684E6 /* BoardTableViewCell.swift in Sources */,
+				5D99B54D20ABCBCB005C5382 /* CoreDataAccess.swift in Sources */,
 				5DBE37C2208DC9B7003684E6 /* Task+CoreDataProperties.swift in Sources */,
 				5D68E6C62085E0370085A41A /* AppDelegate.swift in Sources */,
 				5DBE37C6208DCA6F003684E6 /* Board+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5D99B53920ABCB7E005C5382 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D99B55420ABD112005C5382 /* Board+CoreDataClass.swift in Sources */,
+				5D99B54120ABCB7F005C5382 /* TodayViewController.swift in Sources */,
+				5D99B55020ABD106005C5382 /* kanbanize.xcdatamodeld in Sources */,
+				5D99B54E20ABD0FE005C5382 /* DB.swift in Sources */,
+				5D99B55120ABD10A005C5382 /* Task+CoreDataProperties.swift in Sources */,
+				5D99B55220ABD10C005C5382 /* Task+CoreDataClass.swift in Sources */,
+				5D99B55320ABD10F005C5382 /* Board+CoreDataProperties.swift in Sources */,
+				5D99B54F20ABD103005C5382 /* CoreDataAccess.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D99B54720ABCB7F005C5382 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D99B53C20ABCB7E005C5382 /* upcomingWidget */;
+			targetProxy = 5D99B54620ABCB7F005C5382 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5D68E6C92085E0370085A41A /* Main.storyboard */ = {
@@ -312,6 +415,14 @@
 				5D68E6D22085E0440085A41A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5D99B54220ABCB7F005C5382 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D99B54320ABCB7F005C5382 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -434,6 +545,7 @@
 		5D68E6D82085E0440085A41A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = kanbanize/kanbanize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -457,6 +569,7 @@
 		5D68E6D92085E0440085A41A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = kanbanize/kanbanize.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -472,6 +585,44 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.peterho249.kanbanize;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5D99B54920ABCB7F005C5382 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C562YP6H2C;
+				INFOPLIST_FILE = upcomingWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peterho249.kanbanize.upcomingWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5D99B54A20ABCB7F005C5382 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C562YP6H2C;
+				INFOPLIST_FILE = upcomingWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peterho249.kanbanize.upcomingWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -494,6 +645,15 @@
 			buildConfigurations = (
 				5D68E6D82085E0440085A41A /* Debug */,
 				5D68E6D92085E0440085A41A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D99B54B20ABCB7F005C5382 /* Build configuration list for PBXNativeTarget "upcomingWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D99B54920ABCB7F005C5382 /* Debug */,
+				5D99B54A20ABCB7F005C5382 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -5,11 +5,11 @@ import PieCharts
 class DoughnutDemo: UIViewController, PieChartDelegate {
     
     @IBOutlet weak var chartView: PieChart!
-    var boardName=""
-    var valTodo=0
-    var valDoing=0
-    var valDone=0
-    var valOverdue=0
+    var boardName = ""
+    var valTodo = 0
+    var valDoing = 0
+    var valDone = 0
+    var valOverdue = 0
     
     fileprivate static let alpha: CGFloat = 0.5
     let colors = [

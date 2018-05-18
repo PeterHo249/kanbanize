@@ -9,27 +9,9 @@
 import UIKit
 import Foundation
 
-class TaskDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class TaskDetailViewController: UIViewController, UITextFieldDelegate {
 
-    // MARK - Delegate
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        statusTextField.text = statusRef[row]
-        ColorIndicator(status: statusRef[row])
-    }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return statusRef[row]
-    }
-    
-    // MARK - Datasource
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return statusRef.count
-    }
     
     
     // MARK - Outlet
@@ -53,7 +35,6 @@ class TaskDetailViewController: UIViewController, UIPickerViewDelegate, UIPicker
     var sourceViewController:UIViewController!
     let defaultDate = Date()
     var taskInfo:Task!
-    var selectedIndex = 0
     var sourceStatus:String!
     var currentBoard:String!
     
@@ -224,16 +205,26 @@ class TaskDetailViewController: UIViewController, UIPickerViewDelegate, UIPicker
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension TaskDetailViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    // MARK - Delegate
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        statusTextField.text = statusRef[row]
+        ColorIndicator(status: statusRef[row])
     }
-    */
-
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return statusRef[row]
+    }
+    
+    // MARK - Datasource
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return statusRef.count
+    }
 }

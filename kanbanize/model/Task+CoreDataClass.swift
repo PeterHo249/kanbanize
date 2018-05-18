@@ -9,6 +9,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 
 public class Task: NSManagedObject {

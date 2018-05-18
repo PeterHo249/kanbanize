@@ -30,8 +30,7 @@ class StatisticsViewController: UIViewController {
         super.viewDidLoad()
 
         let ChartView:DoughnutDemo? = DoughnutDemo()
-        ChartView?.boardName=boardName
-        print("staticticccccccccc")
+        ChartView?.boardName = boardName
         showController(ChartView!)
 
 
@@ -56,6 +55,10 @@ class StatisticsViewController: UIViewController {
         self.tabBarController?.navigationItem.title = "Statistics"
         
         self.tabBarController?.navigationItem.rightBarButtonItems = []
+        
+        let ChartView:DoughnutDemo? = DoughnutDemo()
+        ChartView?.boardName = boardName
+        showController(ChartView!)
     }
 
     override func didReceiveMemoryWarning() {

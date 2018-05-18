@@ -29,9 +29,10 @@ class StatisticsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let ChartView = ChartViewController()
-        ChartView.boardName=boardName
-        showController(ChartView)
+        let ChartView:DoughnutDemo? = DoughnutDemo()
+        ChartView?.boardName=boardName
+        print("staticticccccccccc")
+        showController(ChartView!)
 
 
         // Do any additional setup after loading the view.

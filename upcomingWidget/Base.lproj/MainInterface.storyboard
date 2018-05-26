@@ -42,10 +42,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Upcoming Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xm8-wY-cPn">
+                                <rect key="frame" x="84" y="40" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="fxk-wq-oLX" secondAttribute="trailing" constant="10" id="7rc-PU-8ie"/>
+                            <constraint firstItem="Xm8-wY-cPn" firstAttribute="centerY" secondItem="ssy-KU-ocm" secondAttribute="centerY" id="8Iy-x9-EvS"/>
                             <constraint firstItem="fxk-wq-oLX" firstAttribute="leading" secondItem="kzJ-5R-4ih" secondAttribute="leading" id="AvK-au-yQ3"/>
+                            <constraint firstItem="Xm8-wY-cPn" firstAttribute="centerX" secondItem="ssy-KU-ocm" secondAttribute="centerX" id="BMQ-Qk-0zz"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="kzJ-5R-4ih" secondAttribute="trailing" constant="10" id="NAl-JB-Oin"/>
                             <constraint firstItem="bLz-yy-kH2" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="20" id="RG5-fg-vlG"/>
                             <constraint firstItem="kzJ-5R-4ih" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="70" id="VO7-E2-6mq"/>
@@ -65,6 +73,7 @@
                     <connections>
                         <outlet property="boardLabel" destination="fxk-wq-oLX" id="vP1-ac-ede"/>
                         <outlet property="dueDateLabel" destination="6Tf-NP-zoc" id="8Ze-Lp-pGX"/>
+                        <outlet property="errorLabel" destination="Xm8-wY-cPn" id="32N-rO-LS6"/>
                         <outlet property="nameLabel" destination="kzJ-5R-4ih" id="WkT-Hz-lck"/>
                         <outlet property="statusIndicator" destination="bLz-yy-kH2" id="gKN-o2-CMG"/>
                     </connections>

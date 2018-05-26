@@ -216,6 +216,10 @@ extension ToDoViewController: UITableViewDelegate, UITableViewDataSource {
         return configuration
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        return UISwipeActionsConfiguration(actions: [])
+    }
+    
     // MARK - Datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count

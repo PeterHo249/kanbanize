@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		438E1B8C20AE9DFD00FA8920 /* DoughnutDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E1B8A20AE9DFC00FA8920 /* DoughnutDemo.swift */; };
-		438E1B8D20AE9DFD00FA8920 /* DoughnutDemo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 438E1B8B20AE9DFD00FA8920 /* DoughnutDemo.xib */; };
+		438E1B9020BA807600FA8920 /* CustomChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438E1B8E20BA807600FA8920 /* CustomChartViewController.swift */; };
+		438E1B9120BA807600FA8920 /* CustomChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 438E1B8F20BA807600FA8920 /* CustomChartViewController.xib */; };
 		43DDC02F20A2D7BB0009C426 /* PieCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43DDC02E20A2D7BB0009C426 /* PieCharts.framework */; };
 		43DDC03320A2D8EE0009C426 /* PieCharts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 43DDC03220A2D8ED0009C426 /* PieCharts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D68E6C62085E0370085A41A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D68E6C52085E0370085A41A /* AppDelegate.swift */; };
@@ -81,8 +81,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		438E1B8A20AE9DFC00FA8920 /* DoughnutDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoughnutDemo.swift; sourceTree = "<group>"; };
-		438E1B8B20AE9DFD00FA8920 /* DoughnutDemo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoughnutDemo.xib; sourceTree = "<group>"; };
+		438E1B8E20BA807600FA8920 /* CustomChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChartViewController.swift; sourceTree = "<group>"; };
+		438E1B8F20BA807600FA8920 /* CustomChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomChartViewController.xib; sourceTree = "<group>"; };
 		43DDC02C20A2D74D0009C426 /* Build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Build; path = Carthage/Build; sourceTree = "<group>"; };
 		43DDC02E20A2D7BB0009C426 /* PieCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PieCharts.framework; path = Carthage/Build/iOS/PieCharts.framework; sourceTree = "<group>"; };
 		43DDC03220A2D8ED0009C426 /* PieCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PieCharts.framework; path = Carthage/Build/iOS/PieCharts.framework; sourceTree = "<group>"; };
@@ -207,10 +207,10 @@
 		5D68E6DC2085E1B10085A41A /* view */ = {
 			isa = PBXGroup;
 			children = (
-				438E1B8B20AE9DFD00FA8920 /* DoughnutDemo.xib */,
 				5DBE37CB208F020A003684E6 /* TaskTableCell.xib */,
 				5D68E6C92085E0370085A41A /* Main.storyboard */,
 				5D68E6D12085E0440085A41A /* LaunchScreen.storyboard */,
+				438E1B8F20BA807600FA8920 /* CustomChartViewController.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -218,7 +218,6 @@
 		5D68E6DD2085E1B70085A41A /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				438E1B8A20AE9DFC00FA8920 /* DoughnutDemo.swift */,
 				5D68E6C72085E0370085A41A /* BoardViewController.swift */,
 				5D68E6C52085E0370085A41A /* AppDelegate.swift */,
 				5DBE37AB2085EB6F003684E6 /* BoardTableViewCell.swift */,
@@ -230,6 +229,7 @@
 				5DBE37B72085F0BB003684E6 /* TaskDetailViewController.swift */,
 				5DBE37C7208DD218003684E6 /* BoardDetailViewController.swift */,
 				5D99B50F20A97287005C5382 /* SearchViewController.swift */,
+				438E1B8E20BA807600FA8920 /* CustomChartViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -337,8 +337,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				438E1B8D20AE9DFD00FA8920 /* DoughnutDemo.xib in Resources */,
 				5D68E6D32085E0440085A41A /* LaunchScreen.storyboard in Resources */,
+				438E1B9120BA807600FA8920 /* CustomChartViewController.xib in Resources */,
 				5DBE37CC208F020A003684E6 /* TaskTableCell.xib in Resources */,
 				5D68E6D02085E0440085A41A /* Assets.xcassets in Resources */,
 				5D68E6CB2085E0370085A41A /* Main.storyboard in Resources */,
@@ -366,7 +366,6 @@
 				5D99B51020A97287005C5382 /* SearchViewController.swift in Sources */,
 				5DBE37B02085EF2A003684E6 /* DoingViewController.swift in Sources */,
 				5DBE37C8208DD218003684E6 /* BoardDetailViewController.swift in Sources */,
-				438E1B8C20AE9DFD00FA8920 /* DoughnutDemo.swift in Sources */,
 				5DBE37C5208DCA6F003684E6 /* Board+CoreDataClass.swift in Sources */,
 				5DBE37B62085EF9D003684E6 /* TaskTableViewCell.swift in Sources */,
 				5DBE37AE2085EF18003684E6 /* ToDoViewController.swift in Sources */,
@@ -374,6 +373,7 @@
 				5DBE37B42085EF65003684E6 /* StatisticsViewController.swift in Sources */,
 				5D68E6CE2085E0370085A41A /* kanbanize.xcdatamodeld in Sources */,
 				5D68E6C82085E0370085A41A /* BoardViewController.swift in Sources */,
+				438E1B9020BA807600FA8920 /* CustomChartViewController.swift in Sources */,
 				5DBE37AC2085EB6F003684E6 /* BoardTableViewCell.swift in Sources */,
 				5D99B54D20ABCBCB005C5382 /* CoreDataAccess.swift in Sources */,
 				5DBE37C2208DC9B7003684E6 /* Task+CoreDataProperties.swift in Sources */,

@@ -29,8 +29,9 @@ class StatisticsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let ChartView:DoughnutDemo? = DoughnutDemo()
-        ChartView?.boardName = boardName
+        let ChartView:CustomChartViewController? = CustomChartViewController()
+        ChartView?.boardName=boardName
+        print("staticticccccccccc")
         showController(ChartView!)
 
 
@@ -56,8 +57,8 @@ class StatisticsViewController: UIViewController {
         
         self.tabBarController?.navigationItem.rightBarButtonItems = []
         
-        let ChartView:DoughnutDemo? = DoughnutDemo()
-        ChartView?.boardName = boardName
+        let ChartView:CustomChartViewController? = CustomChartViewController()
+        ChartView?.boardName=boardName
         showController(ChartView!)
     }
 
@@ -65,5 +66,16 @@ class StatisticsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }

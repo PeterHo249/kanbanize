@@ -40,10 +40,11 @@ class SearchViewController: UIViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
-        searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Tasks"
         searchController.searchBar.sizeToFit()
+        searchController.searchBar.scopeButtonTitles = ["Name", "Label"]
         tableView.tableHeaderView = searchController.searchBar
+        tableView.contentInset = UIEdgeInsets(top: 70, left: 0, bottom: 0, right: 0)
         definesPresentationContext = true
     }
     
@@ -64,6 +65,7 @@ class SearchViewController: UIViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let editVC = storyBoard.instantiateViewController(withIdentifier: "TaskDetailViewController") as! TaskDetailViewController
         editVC.taskInfo = filteredTasks[index] as! Task
+        editVC.selectedIndex = index
         editVC.modeFlag = false
         editVC.sourceViewController = self
         editVC.sourceStatus = (filteredTasks[index] as! Task).status
@@ -71,6 +73,15 @@ class SearchViewController: UIViewController {
         self.tabBarController?.navigationController?.pushViewController(editVC, animated: true)
     }
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
 
@@ -96,15 +107,25 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchString = searchController.searchBar.text {
+            let buttonIndex = searchController.searchBar.selectedScopeButtonIndex
             filteredTasks.removeAll(keepingCapacity: true)
             
-            for task in tasks {
-                if (((task as! Task).name?.range(of: searchString, options: .caseInsensitive, range: nil, locale: nil)) != nil) {
-                    filteredTasks.append(task)
+            if buttonIndex == 0 {
+                for task in tasks {
+                    if (((task as! Task).name?.range(of: searchString, options: .caseInsensitive, range: nil, locale: nil)) != nil) {
+                        filteredTasks.append(task)
+                    }
+                }
+            } else {
+                for task in tasks {
+                    if (((task as! Task).label?.range(of: searchString, options: .caseInsensitive, range: nil, locale: nil)) != nil) {
+                        filteredTasks.append(task)
+                    }
                 }
             }
-        
         }
         tableView.reloadData()
     }
+    
+    
 }

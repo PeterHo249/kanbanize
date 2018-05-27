@@ -9,7 +9,51 @@
 import UIKit
 import CoreData
 
-class BoardViewController: UIViewController {
+class BoardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    // MARK - Delegate
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let tasks = Task.FetchData(sort: true, board: (boards[indexPath.row] as! Board).name!)
+            for task in tasks {
+                DB.MOC.delete(task)
+            }
+            DB.MOC.delete(boards[indexPath.row])
+            boards.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            DB.Save()
+        }
+    }
+    
+    func MoveItem(fromIndex from: Int, toIndex to: Int) {
+        let item = boards[from]
+        boards.remove(at: from)
+        boards.insert(item, at: to)
+        UpdateOrder()
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        MoveItem(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
+    }
+    
+    // MARK - Datasource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return boards.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BoardTableViewCell", for: indexPath) as! BoardTableViewCell
+        // TODO - Implement code for cell
+        let boardInfo = boards[indexPath.row] as! Board
+        cell.boardNameLabel.text = boardInfo.name
+        
+        return cell
+    }
+    
     
     // MARK - Variable
     var boards = [NSManagedObject]()
@@ -161,50 +205,5 @@ class BoardViewController: UIViewController {
     }
 
 
-}
-
-extension BoardViewController: UITableViewDataSource, UITableViewDelegate {
-    // MARK - Delegate
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let tasks = Task.FetchData(sort: true, board: (boards[indexPath.row] as! Board).name!)
-            for task in tasks {
-                DB.MOC.delete(task)
-            }
-            DB.MOC.delete(boards[indexPath.row])
-            boards.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            DB.Save()
-        }
-    }
-    
-    func MoveItem(fromIndex from: Int, toIndex to: Int) {
-        let item = boards[from]
-        boards.remove(at: from)
-        boards.insert(item, at: to)
-        UpdateOrder()
-    }
-    
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        MoveItem(fromIndex: sourceIndexPath.row, toIndex: destinationIndexPath.row)
-    }
-    
-    // MARK - Datasource
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return boards.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BoardTableViewCell", for: indexPath) as! BoardTableViewCell
-        // TODO - Implement code for cell
-        let boardInfo = boards[indexPath.row] as! Board
-        cell.boardNameLabel.text = boardInfo.name
-        
-        return cell
-    }
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JGE-7K-lIY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JGE-7K-lIY">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BoardTableViewCell" rowHeight="60" id="Xf0-ek-yth" customClass="BoardTableViewCell" customModule="kanbanize" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BoardTableViewCell" rowHeight="60" id="Xf0-ek-yth" customClass="BoardTableViewCell" customModule="kanbanize" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xf0-ek-yth" id="F0D-zm-St4">
@@ -116,10 +116,25 @@
                     <view key="view" contentMode="scaleToFill" id="qLK-g6-B0g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCb-PZ-42H" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FhZ-Q8-g23" firstAttribute="bottom" secondItem="JCb-PZ-42H" secondAttribute="bottom" id="XT5-dX-gMS"/>
+                            <constraint firstItem="JCb-PZ-42H" firstAttribute="leading" secondItem="FhZ-Q8-g23" secondAttribute="leading" id="Ydt-Lz-1bY"/>
+                            <constraint firstItem="FhZ-Q8-g23" firstAttribute="trailing" secondItem="JCb-PZ-42H" secondAttribute="trailing" id="bUf-mc-bor"/>
+                            <constraint firstItem="JCb-PZ-42H" firstAttribute="top" secondItem="FhZ-Q8-g23" secondAttribute="top" id="phA-Qi-Zb6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FhZ-Q8-g23"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Statistics" image="icons8-statistics-24" selectedImage="icons8-statistics-24" id="6xQ-se-ZNa"/>
+                    <connections>
+                        <outlet property="pieChart" destination="JCb-PZ-42H" id="PFg-48-ZY8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="85c-Ry-Kd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -306,6 +321,7 @@
                                     <constraint firstItem="1dV-sM-iye" firstAttribute="leading" secondItem="5ei-X1-1WJ" secondAttribute="leading" id="TlZ-Po-29S"/>
                                     <constraint firstItem="PAJ-nl-9Ot" firstAttribute="top" secondItem="1dV-sM-iye" secondAttribute="bottom" constant="11" id="UYm-qt-iLm"/>
                                     <constraint firstItem="1dV-sM-iye" firstAttribute="leading" secondItem="rsH-xz-5sV" secondAttribute="leading" id="YYS-rj-2rk"/>
+                                    <constraint firstItem="aQ8-3K-IBH" firstAttribute="leading" secondItem="An3-Dh-eKZ" secondAttribute="trailing" constant="-3" id="caP-GZ-eAl"/>
                                     <constraint firstItem="1dV-sM-iye" firstAttribute="trailing" secondItem="PAJ-nl-9Ot" secondAttribute="trailing" id="dB4-zL-Liz"/>
                                     <constraint firstItem="1dV-sM-iye" firstAttribute="trailing" secondItem="rsH-xz-5sV" secondAttribute="trailing" id="gmZ-ko-IJk"/>
                                     <constraint firstItem="An3-Dh-eKZ" firstAttribute="leading" secondItem="80y-cz-IXW" secondAttribute="leading" id="hIV-26-jxS"/>

@@ -1,0 +1,40 @@
+PODS:
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - Charts (3.1.1):
+    - Charts/Core (= 3.1.1)
+  - Charts/Core (3.1.1)
+  - DZNEmptyDataSet (1.8.1)
+  - Onboard (2.3.3)
+
+DEPENDENCIES:
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
+  - Charts
+  - DZNEmptyDataSet
+  - Onboard
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Charts
+    - DZNEmptyDataSet
+    - Onboard
+
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
+    :git: https://github.com/ViccAlexander/Chameleon.git
+
+SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  Onboard: 4d6e943e20bdd6bc229df967a347dd7514bc2a6f
+
+PODFILE CHECKSUM: 9659039a79062a0fd791e599bd59cad22ff5860f
+
+COCOAPODS: 1.5.3

@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import ChameleonFramework
 
 class TaskDetailViewController: UIViewController, UITextFieldDelegate {
 
@@ -132,16 +133,16 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate {
     func ColorIndicator(status:String) {
         switch status {
         case "todo":
-            statusIndicator.textColor = UIColor.blue
+            statusIndicator.textColor = FlatBlue()
             break
         case "doing":
-            statusIndicator.textColor = UIColor.yellow
+            statusIndicator.textColor = FlatYellow()
             break
         case "done":
-            statusIndicator.textColor = UIColor.green
+            statusIndicator.textColor = FlatGreen()
             break
         default:
-            statusIndicator.textColor = UIColor.red
+            statusIndicator.textColor = FlatRed()
         }
     }
     

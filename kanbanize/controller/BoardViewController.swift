@@ -8,8 +8,11 @@
 
 import UIKit
 import CoreData
+import Foundation
+import DZNEmptyDataSet
+import ChameleonFramework
 
-class BoardViewController: UIViewController {
+class BoardViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     // MARK - Variable
     var boards = [NSManagedObject]()
@@ -17,6 +20,29 @@ class BoardViewController: UIViewController {
     
     // MARK - Outlet
      @IBOutlet weak var boardTableView: UITableView!
+    
+    // Empty data set
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "empty-task")
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "You have no boards."
+        let attribs = [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor: FlatGray()]
+        return NSAttributedString(string: text, attributes: attribs)
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "Add board and task to manage your working. Add your first board by tapping Add button."
+        
+        let para = NSMutableParagraphStyle()
+        para.lineBreakMode = .byWordWrapping
+        para.alignment = .center
+        
+        let attribs = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14), NSAttributedStringKey.foregroundColor: FlatGrayDark(), NSAttributedStringKey.paragraphStyle: para]
+        
+        return NSAttributedString(string: text, attributes: attribs)
+    }
     
     // MARK - Action
     @objc func AddButtonPressed(sender: UIBarButtonItem) {
@@ -103,56 +129,9 @@ class BoardViewController: UIViewController {
         
         self.navigationItem.rightBarButtonItems = [addButton, editButton]
         
-        // Init data for testing
-        if boards.count == 0 {
-            print("start init data")
-            let boardItem = Board.Create() as! Board
-            boardItem.name = "todo"
-            boardItem.nameOrder = 1
-            DB.Save()
-            
-            var taskItem = Task.Create() as! Task
-            taskItem.name = "Todo task"
-            taskItem.dueDate = Date() as NSDate
-            taskItem.status = "todo"
-            taskItem.label = "label"
-            taskItem.detail = "some detail"
-            taskItem.board = "todo"
-            taskItem.order = 1
-            DB.Save()
-            
-            taskItem = Task.Create() as! Task
-            taskItem.name = "Doing task"
-            taskItem.dueDate = Date() as NSDate
-            taskItem.status = "doing"
-            taskItem.label = "label"
-            taskItem.detail = "some detail"
-            taskItem.board = "todo"
-            taskItem.order = 2
-            DB.Save()
-            
-            taskItem = Task.Create() as! Task
-            taskItem.name = "Done task"
-            taskItem.dueDate = Date() as NSDate
-            taskItem.status = "done"
-            taskItem.label = "label"
-            taskItem.detail = "some detail"
-            taskItem.board = "todo"
-            taskItem.order = 3
-            DB.Save()
-            
-            taskItem = Task.Create() as! Task
-            taskItem.name = "overdue task"
-            taskItem.dueDate = Date() as NSDate
-            taskItem.status = "overdue"
-            taskItem.label = "label"
-            taskItem.detail = "some detail"
-            taskItem.board = "todo"
-            taskItem.order = 4
-            DB.Save()
-            
-            boards = Board.All()
-        }
+        boardTableView.emptyDataSetSource = self
+        boardTableView.emptyDataSetDelegate = self
+        boardTableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {

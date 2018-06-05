@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import CoreData
+import Charts
+import ChameleonFramework
 
 class StatisticsViewController: UIViewController {
  
@@ -19,36 +22,43 @@ class StatisticsViewController: UIViewController {
     
     
     // MARK - Outlet
+    @IBOutlet weak var pieChart: PieChartView!
     
     
     // MARK - Action
-    
+    func pieChartUpdate() {
+        var tasks = Task.FetchData(sort: false, board: boardName, status: "todo")
+        let todoEntry = PieChartDataEntry(value: Double(tasks.count), label: "Todo")
+        tasks = Task.FetchData(sort: false, board: boardName, status: "doing")
+        let doingEntry = PieChartDataEntry(value: Double(tasks.count), label: "Doing")
+        tasks = Task.FetchData(sort: false, board: boardName, status: "done")
+        let doneEntry = PieChartDataEntry(value: Double(tasks.count), label: "Done")
+        tasks = Task.FetchData(sort: false, board: boardName, status: "overdue")
+        let overdueEntry = PieChartDataEntry(value: Double(tasks.count), label: "Overdue")
+        let dataSet = PieChartDataSet(values: [todoEntry, doingEntry, doneEntry, overdueEntry], label: "Status")
+        let data = PieChartData(dataSet: dataSet)
+        pieChart.data = data
+        pieChart.chartDescription?.text = "Process Statictics"
+        
+        dataSet.colors = [FlatBlue(), FlatYellow(), FlatGreen(), FlatRed()]
+        pieChart.legend.enabled = false
+        pieChart.animate(xAxisDuration: 1.5, easingOption: .easeInOutQuint)
+        
+        pieChart.notifyDataSetChanged()
+    }
     
     // MARK - Segue
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let ChartView:DoughnutDemo? = DoughnutDemo()
-        ChartView?.boardName = boardName
-        showController(ChartView!)
-
 
         // Do any additional setup after loading the view.
         self.tabBarController?.navigationItem.rightBarButtonItems = []
 
+        pieChartUpdate()
     }
 
-    fileprivate func showController(_ controller: UIViewController) {
-        if let currentController = currentController {
-            currentController.removeFromParentViewController()
-            currentController.view.removeFromSuperview()
-        }
-        addChildViewController(controller)
-        controller.view.frame = view.bounds
-        view.addSubview(controller.view)
-        currentController = controller
-    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.title = "Statistics"
@@ -56,9 +66,7 @@ class StatisticsViewController: UIViewController {
         
         self.tabBarController?.navigationItem.rightBarButtonItems = []
         
-        let ChartView:DoughnutDemo? = DoughnutDemo()
-        ChartView?.boardName = boardName
-        showController(ChartView!)
+        pieChartUpdate()
     }
 
     override func didReceiveMemoryWarning() {

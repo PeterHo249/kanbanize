@@ -428,7 +428,7 @@
         <!--Navigation Controller-->
         <scene sceneID="xq7-u6-DWk">
             <objects>
-                <navigationController id="JGE-7K-lIY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JGE-7K-lIY" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="t7e-AT-d0D">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

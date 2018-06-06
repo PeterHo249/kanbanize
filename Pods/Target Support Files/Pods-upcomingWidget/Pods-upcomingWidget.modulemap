@@ -1,0 +1,6 @@
+framework module Pods_upcomingWidget {
+  umbrella header "Pods-upcomingWidget-umbrella.h"
+
+  export *
+  module * { export * }
+}

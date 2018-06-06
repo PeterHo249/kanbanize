@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class TaskTableViewCell: UITableViewCell {
 
@@ -23,16 +24,16 @@ class TaskTableViewCell: UITableViewCell {
         dueDateLabel.text = dateFormatter.string(from: dueDate)
         switch status {
         case "todo":
-            statusIndicator.textColor = UIColor.blue
+            statusIndicator.textColor = FlatBlue()
             break
         case "doing":
-            statusIndicator.textColor = UIColor.yellow
+            statusIndicator.textColor = FlatYellow()
             break
         case "done":
-            statusIndicator.textColor = UIColor.green
+            statusIndicator.textColor = FlatGreen()
             break
         default:
-            statusIndicator.textColor = UIColor.red
+            statusIndicator.textColor = FlatRed()
         }
         
         accessoryType = .detailDisclosureButton

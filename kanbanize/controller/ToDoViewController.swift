@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import ChameleonFramework
 
 class ToDoViewController: UIViewController {
     
@@ -211,7 +212,7 @@ extension ToDoViewController: UITableViewDelegate, UITableViewDataSource {
             self.MoveTaskAction(index: indexPath.row, status: "doing")
         }
         
-        moveDoingAction.backgroundColor = UIColor(red: 255, green: 200, blue: 0, alpha: 1)
+        moveDoingAction.backgroundColor = FlatYellow()
         let configuration = UISwipeActionsConfiguration(actions: [moveDoingAction])
         return configuration
     }

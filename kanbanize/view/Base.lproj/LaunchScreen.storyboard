@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,17 +26,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product_owner-512-3" translatesAutoresizingMaskIntoConstraints="NO" id="Ri9-Fn-dIX">
-                                <rect key="frame" x="60" y="220" width="255" height="247"/>
+                                <rect key="frame" x="64" y="220" width="247" height="247"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ri9-Fn-dIX" secondAttribute="height" multiplier="1:1" id="EFC-RR-mDQ"/>
+                                    <constraint firstAttribute="height" constant="247" id="jcr-jM-5z4"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ri9-Fn-dIX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="EGr-hg-u8D"/>
-                            <constraint firstAttribute="trailing" secondItem="Ri9-Fn-dIX" secondAttribute="trailing" constant="60" id="HoU-AY-az2"/>
+                            <constraint firstItem="Ri9-Fn-dIX" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="BWf-QL-fgS"/>
                             <constraint firstItem="uMB-E1-X60" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bb5-Qq-bs5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uMB-E1-X60" secondAttribute="bottom" constant="40" id="kcs-yH-HwO"/>
-                            <constraint firstItem="Ri9-Fn-dIX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="ytH-nW-Pym"/>
-                            <constraint firstAttribute="bottom" secondItem="Ri9-Fn-dIX" secondAttribute="bottom" constant="200" id="zeD-SI-crN"/>
+                            <constraint firstItem="Ri9-Fn-dIX" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qGf-cl-iie"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

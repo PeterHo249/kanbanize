@@ -15,6 +15,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var boardLabel: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,11 +55,18 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidAppear(_ animated: Bool) {
         let task = Task.FetchUpcomingTask()
         if (task != nil) {
+            nameLabel.isHidden = false
+            dueDateLabel.isHidden = false
+            boardLabel.isHidden = false
+            statusIndicator.isHidden = false
+            errorLabel.isHidden = true
             DisplayInfo(task: task as! Task)
         } else {
-            nameLabel.text = ""
-            dueDateLabel.text = ""
-            boardLabel.text = ""
+            nameLabel.isHidden = true
+            dueDateLabel.isHidden = true
+            boardLabel.isHidden = true
+            statusIndicator.isHidden = true
+            errorLabel.isHidden = false
         }
     }
     

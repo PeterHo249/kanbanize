@@ -83,11 +83,16 @@ public class Task: NSManagedObject {
                 var result = list[0]
                 for record in list {
                     let recordDate = (record as! Task).dueDate! as Date
-                    if (recordDate > now && recordDate < (result as! Task).dueDate! as Date) {
+                    if ((recordDate > now && recordDate < (result as! Task).dueDate! as Date) || (((result as! Task).dueDate! as Date) < now && recordDate > now)) {
                         result = record
                     }
                 }
-                return result
+                
+                if (((result as! Task).dueDate! as Date) < now) {
+                    return nil
+                } else {
+                    return result
+                }
             }
         }
         catch let error as NSError {

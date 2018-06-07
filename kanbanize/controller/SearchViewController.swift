@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import ChameleonFramework
+import DZNEmptyDataSet
 
 class SearchViewController: UIViewController {
 
@@ -45,6 +47,10 @@ class SearchViewController: UIViewController {
         searchController.searchBar.sizeToFit()
         tableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
+        
+        tableView.emptyDataSetDelegate = self
+        tableView.emptyDataSetSource = self
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,5 +112,29 @@ extension SearchViewController: UISearchResultsUpdating {
         
         }
         tableView.reloadData()
+    }
+}
+
+extension SearchViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "search")
+    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "You have no search commands."
+        let attribs = [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18), NSAttributedStringKey.foregroundColor: FlatGray()]
+        return NSAttributedString(string: text, attributes: attribs)
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "Add a name of task into search box to search task."
+        
+        let para = NSMutableParagraphStyle()
+        para.lineBreakMode = .byWordWrapping
+        para.alignment = .center
+        
+        let attribs = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14), NSAttributedStringKey.foregroundColor: FlatGrayDark(), NSAttributedStringKey.paragraphStyle: para]
+        
+        return NSAttributedString(string: text, attributes: attribs)
     }
 }

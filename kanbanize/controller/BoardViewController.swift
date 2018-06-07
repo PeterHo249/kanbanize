@@ -11,7 +11,6 @@ import CoreData
 import Foundation
 import DZNEmptyDataSet
 import ChameleonFramework
-import Onboard
 
 class BoardViewController: UIViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     

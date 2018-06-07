@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UISplitViewControllerDeleg
     func generateStandardOnboardingVC() -> OnboardingViewController {
         let firstPage = OnboardingContentViewController(title: "Add new board", body: "Starting a new project with a board!", image: UIImage(named: "new-board"), buttonText: nil, action: nil)
         let secondPage = OnboardingContentViewController(title: "Swipe To Move", body: "Swipe your task left and right to change its status.", image: UIImage(named: "swipe"), buttonText: nil, actionBlock: nil)
-        let thirdPage = OnboardingContentViewController(title: "Statictics", body: "View your workk process with a pie chart.", image: UIImage(named: "chart"), buttonText: nil, actionBlock: nil)
+        let thirdPage = OnboardingContentViewController(title: "Statictics", body: "View your work process with a pie chart.", image: UIImage(named: "chart"), buttonText: nil, actionBlock: nil)
         let fourthPage = OnboardingContentViewController(title: "Extension", body: "View your upcoming task with a extension.", image: UIImage(named: "extension"), buttonText: "Get Started") {
             () -> Void in
             self.handleOnboardingCompletion()

@@ -29,6 +29,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             dueDateLabel.text = ""
             boardLabel.text = ""
         }
+        
+        
+    }
+    
+    @IBAction func TapRecognized(_ sender: UITapGestureRecognizer) {
+        self.extensionContext?.open(URL(string: "peterho.kanbanize://")!, completionHandler: nil)
     }
     
     func DisplayInfo(task: Task) {

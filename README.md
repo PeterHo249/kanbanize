@@ -24,3 +24,4 @@ An application to manage your task on iOS.
 5. Push Upcoming Event notification when time is running out for completing task.
 6. Search for specific task in a board.
 7. Draw chart to show statistics of working process.
+8. Swipe right or left to change status of task.

@@ -20,7 +20,7 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var statusTextField: UITextField!
     @IBOutlet weak var dueDateTextField: UITextField!
     @IBOutlet weak var labelTextField: UITextField!
-    @IBOutlet weak var descriptionTextArea: UITextField!
+    @IBOutlet weak var descriptionTextArea: UITextView!
     @IBOutlet weak var statusIndicator: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -152,6 +152,10 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view
+        let grayColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+        descriptionTextArea.layer.borderColor = grayColor.cgColor
+        descriptionTextArea.layer.borderWidth = 1.0
+        descriptionTextArea.layer.cornerRadius = 5.0
         
         if modeFlag {
             self.title = "Add New Task"
